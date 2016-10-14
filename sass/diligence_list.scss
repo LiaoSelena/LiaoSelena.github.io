@@ -1,0 +1,120 @@
+@import "reset";
+@import "fun";
+@import "nav";
+
+.diligence_list{
+	.img_bg{
+	 position: absolute;
+	 z-index:1;
+	 width:100%;
+	 height:100%;
+	}
+	.content{
+		    position: absolute;
+		    width:100%;
+		    top:0;
+		    z-index:2;
+	    .title{
+		    background:url("../images/diligence_list_title.png") no-repeat;
+		    background-size: 100% auto;
+		    width:100%;
+		    text-align:center;
+		    height:110rem/$fsbase;
+		    line-height:110rem/$fsbase;
+		    color:#e36404;
+		    @include fdpr(18px);
+		 span{
+		     color:#ffc17d;
+		   }
+		} 
+	   .list{
+	             margin:20rem/$fsbase 90rem/$fsbase;
+	             background:url("../images/diligence_list_bg.png") no-repeat;
+	             background-size: 100% auto;
+	             height:815rem/$fsbase;
+	             overflow:hidden;
+
+			dl{
+			    transform: translateY(0px);
+			    -webkit-transform: translateY(0px);
+			    -moz-transform: translateY(0px);
+			    transition-duration: 0.1s; 
+			    -webkit-transition-duration: 0.1s; 
+			    -moz-transition-duration: 0.1s;
+
+			 dt{
+			    padding-top:42rem/$fsbase;
+			    text-align:center;
+			    @include fdpr(15px);
+			    color:#a04604;
+			  span{
+			     color:#703f26;
+			  }
+			 }
+			}
+	   }
+	   .btn{
+	       width:100%;
+	       display:flex;
+	       margin-top:40rem/$fsbase;
+	       li{
+	       	float:left;
+	       width:50%;
+	       text-align:center;
+	       img{
+	       width:262rem/$fsbase;
+	       height:66rem/$fsbase;
+	       }
+	       }
+	   }
+	}
+}
+.back_bg{
+    display:none;
+	background:rgba(0,0,0,0.4);
+	position: absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	z-index:11;
+}
+.diligence_list_pop{
+    display:none;
+	position:absolute;
+	z-index:12;
+	padding:350rem/$fsbase 65rem/$fsbase 0 65rem/$fsbase;
+	dl{
+	  
+	  dt{
+	      padding:0 30rem/$fsbase 30rem/$fsbase 30rem/$fsbase;
+	      background:#f5e8d8;
+	      border-top-right-radius:10px;
+	      border-top-left-radius:10px;
+	  h3{
+		  text-align:center;
+		  color:#bf070b;
+		  @include fdpr(22px);
+		  padding:40rem/$fsbase 0;
+		  margin:0;
+	  }
+	  p{
+		   padding:0;
+		   margin:0;
+		   text-indent:68rem/$fsbase;
+		   color:#bf070b;
+		   @include fdpr(12px);
+		   line-height:40rem/$fsbase;
+	  }
+	  }
+	  dd{
+          background:#f5e8d8;
+          margin-top:2px;
+          border-bottom-right-radius:10px;
+	      border-bottom-left-radius:10px;
+	      text-align:center;
+	      color:#bf070b;
+	      @include fdpr(16px);
+	      padding:25rem/$fsbase 0;
+	  }
+	}
+}

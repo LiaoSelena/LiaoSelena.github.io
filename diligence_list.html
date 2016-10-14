@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">	
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no, email=no" />
+	<title>精进榜</title>
+	<script type="text/javascript" src="js/flexible.js"></script>
+	<script type="text/javascript" src="js/pageLoading.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/diligence_list.css">
+</head>
+<body>
+	<div class="diligence_list">
+		<img class="img_bg" src="images/back.jpg">
+		<div class="content">
+			<div class="title"><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</div>
+			<div class="list">
+				<dl>
+					<dt><span>1迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>3迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>2迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>1迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>3迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+					<dt><span>2迦叶阿南弟子</span>已连续供佛<span>7</span>天</dt>
+				</dl>
+			</div>
+
+			<ul class="btn">
+				 <li><img class="rule_btn" src="images/diligence_list_btn1.png"></li>
+				 <li><img class="merits_btn" src="images/diligence_list_btn2.png"></li>
+			</ul>
+		</div>
+		<ul class="nav">
+			<li><a href="index.html"></a></li>
+			<li class="on"><a href="diligence_list.html"></a></li>
+			<li>
+				<a href="javascript:;" class="ddbtn"></a>
+				<div class="dropdown">
+					<div class="link"><a href="record.html">我的记录</a></div>
+					<div class="link"><a href="tablet.html">我的牌位</a></div>
+				</div>
+			</li>
+			<li><a href="javascript:;" class="sbtn"></a></li>
+		</ul>
+	</div>
+	<div class="back_bg"></div>
+	<div class="diligence_list_pop rule_pop">
+	   <dl>
+	    <dt>
+		    <h3>榜单规则</h3>
+			<p>师兄吉祥，若您坚持每日供佛，连续超过7天时，即可登上精进榜。若有一日间断，则需要从头再来，还望师兄每日坚持。</p>
+		</dt>
+		<dd>好</dd>
+		</dl>
+	</div>
+	<div class="diligence_list_pop merits_pop">
+	   <dl>
+	    <dt>
+		    <h3>上榜功德</h3>
+			<p> 师兄吉祥，若您已连续供佛7天登上精进榜，即可自由填写牌位信息，我们将会在朝圣XX山为您请牌位一尊。（本牌位不接受随喜，全凭师兄发心供佛才能得到）</p>
+		</dt>
+		<dd>好</dd>
+		</dl>
+	</div>
+	<div id="mask"></div>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/fun.js"></script>
+	<script>
+	    //榜单规则
+		$(".rule_btn").on("click", function(){
+			$(".back_bg").show();
+			$(".rule_pop").show();
+		});
+		$(".rule_pop dd").click(function(){
+			$(".back_bg").hide();
+			$(".rule_pop").hide();
+		});
+		//上榜功德
+		$(".merits_btn").on("click", function(){
+			$(".back_bg").show();
+			$(".merits_pop").show();
+		});
+		$(".merits_pop dd").click(function(){
+			$(".back_bg").hide();
+			$(".merits_pop").hide();
+		});
+		//文字滚动
+		var number=0;
+	   var box_h=$(".content .list").height();
+	   var content_h=$(".content .list dl").height();
+	   var c_h=box_h-content_h;
+		var timer=setInterval(function(){
+			number--;
+			$(".content .list dl").css({"transform":"translateY("+number+"px)"});
+			$(".content .list dl").css({"-webkit-transform":"translateY("+number+"px)"});
+			$(".content .list dl").css({"-moz-transform":"translateY("+number+"px)"});
+	          if(number<c_h){
+				number=0
+			}
+		},40);
+	</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+@import "reset";
+@import "fun";
+@import "nav";
+
+.shelf{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 98rem/$fsbase;	
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	&::-webkit-scrollbar{
+		opacity: 0;
+		width: 0;
+	}
+}
+.booklist{
+	padding-top: 36rem/$fsbase;
+	background: url(../images/shelf.png) repeat-y;
+	background-size: 100% auto;
+	li{
+		float: left;
+		width: 50%;
+		margin-bottom: 50rem/$fsbase;
+		.imgbox{
+			display: block;
+			width: 236rem/$fsbase;
+			height: 316rem/$fsbase;
+			margin: 0 auto;
+			-webkit-box-shadow: 10px 4px 10px rgba(0,0,0,.5);
+			box-shadow: 10px 4px 10px rgba(0,0,0,.5);
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

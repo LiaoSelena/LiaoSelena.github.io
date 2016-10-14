@@ -5,18 +5,22 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta name="format-detection" content="telephone=no, email=no" />
-	<title>首页</title>
+	<title>首页-贴金</title>
 	<script type="text/javascript" src="js/flexible.js"></script>
 	<script type="text/javascript" src="js/pageLoading.js"></script>
-	<link type="text/css" rel="stylesheet" href="css/index.css">	
+	<link type="text/css" rel="stylesheet" href="css/index.css">
 </head>
 <body>
 	<div class="pagebox">
 		<div class="music">
 			<audio src="music/mercy.mp3" autoplay loop></audio>
 		</div>
+		<div class="circlebottom"></div>
+		<div class="groly">
+			<div class="circle"></div>
+		</div>
 		<div class="joss">
-			<img src="images/fo.png" alt="佛像">
+			<img src="images/fo2.png" alt="佛像">
 		</div>
 		<div class="light">
 			<img src="images/light.png" alt="花灯">
@@ -25,36 +29,41 @@
 			<img src="images/light.png" alt="花灯">
 		</div>
 		<div class="vase">
-			<img src="images/hp_no.png" alt="空花瓶">
+			<img src="images/hp01.png" alt="花瓶">
 		</div>
 		<div class="vase two">
-			<img src="images/hp_no.png" alt="空花瓶">
+			<img src="images/hp01.png" alt="花瓶">
 		</div>
 		<div class="compote">
-			<img src="images/gp_no.png" alt="空果盘">
+			<img src="images/gp01.png" alt="果盘">
 		</div>
 		<div class="compote two">
-			<img src="images/gp_no.png" alt="空果盘">
+			<img src="images/gp01.png" alt="果盘">
 		</div>
 		<div class="censer">
-			<img src="images/xl_no.png" alt="空香炉">
+			<div class="smoke"></div>
+			<img src="images/xl01.png" alt="香炉">
 		</div>
-		<div class="incense">
-			<a href="tribute.html"><img src="images/sx.png" alt="上香"></a>
-		</div>		
+		<div class="bottle">
+			<img src="images/zs.png" alt="中水">
+		</div>	
 		<ul class="nav">
 			<li class="on"><a href="index.html"></a></li>
 			<li><a href="diligence_list.html"></a></li>
-			<li>
-				<a href="javascript:;" class="ddbtn"></a>
-				<div class="dropdown">
-					<div class="link"><a href="record.html">我的记录</a></div>
-					<div class="link"><a href="tablet.html">我的牌位</a></div>
-				</div>
-			</li>
+			<li><a href="tablet.html"></a></li>
 			<li><a href="javascript:;" class="sbtn"></a></li>
 		</ul>
 	</div>
+	<div class="indextip" id="indextip">
+		<div class="cont">
+			随喜赞叹，您今天供佛圆满请做<br>回向，积累功德消业障
+		</div>
+		<ul class="indextip_btn">
+			<li><a href="back.html">确定</a></li>
+			<!-- <li><a href="javascript:;" class="cancel">取消</a></li> -->
+		</ul>
+	</div>
+	<div class="indexmask" id="indexmask"></div>
 	<div id="mask"></div>
 	<script src="js/zepto.min.js"></script>
 	<script src="js/fun.js"></script>
@@ -80,6 +89,10 @@
 					}
 				}
 			});
+
+			// $('a.cancel').on('tap', function(){
+			// 	$('#indextip, #indexmask').css('display', 'none');
+			// });
 
 		});
 	</script>
