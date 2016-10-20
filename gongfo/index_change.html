@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no, email=no" />
+	<title>首页-贴金</title>
+	<script type="text/javascript" src="js/flexible.js"></script>
+	<script type="text/javascript" src="js/pageLoading.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="pagebox">
+		<div class="music">
+			<audio src="music/mercy.mp3" autoplay loop></audio>
+		</div>
+		<div class="circlebottom"></div>
+		<div class="groly">
+			<div class="circle"></div>
+		</div>
+		<div class="joss">
+			<img src="images/fo2.png" alt="佛像">
+		</div>
+		<div class="light">
+			<img src="images/light.png" alt="花灯">
+		</div>
+		<div class="light two">
+			<img src="images/light.png" alt="花灯">
+		</div>
+		<div class="vase">
+			<img src="images/hp01.png" alt="花瓶">
+		</div>
+		<div class="vase two">
+			<img src="images/hp01.png" alt="花瓶">
+		</div>
+		<div class="compote">
+			<img src="images/gp01.png" alt="果盘">
+		</div>
+		<div class="compote two">
+			<img src="images/gp01.png" alt="果盘">
+		</div>
+		<div class="censer">
+			<div class="smoke"></div>
+			<img src="images/xl01.png" alt="香炉">
+		</div>
+		<div class="bottle">
+			<img src="images/zs.png" alt="中水">
+		</div>	
+		<ul class="nav">
+			<li class="on"><a href="index.html"></a></li>
+			<li><a href="diligence_list.html"></a></li>
+			<li><a href="tablet.html"></a></li>
+			<li><a href="javascript:;" class="sbtn"></a></li>
+		</ul>
+	</div>
+	<div class="indextip" id="indextip">
+		<div class="cont">
+			随喜赞叹，您今天供佛圆满请做<br>回向，积累功德消业障
+		</div>
+		<ul class="indextip_btn">
+			<li><a href="back.html">确定</a></li>
+			<!-- <li><a href="javascript:;" class="cancel">取消</a></li> -->
+		</ul>
+	</div>
+	<div class="indexmask" id="indexmask"></div>
+	<div id="mask"></div>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/fun.js"></script>
+	<script>
+		$(function(){
+
+			$('.music').on('tap', function(){
+				if (!$(this).hasClass('off')){
+					$(this).addClass('off');
+					$('audio').get(0).pause();
+				}else {
+					$(this).removeClass('off');
+					$('audio').get(0).play();
+				}
+			});
+
+			$('body').bind('touchstart', function(){
+				if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+					if(!$('.music').hasClass('off')){
+						$('audio').get(0).play();
+					}else{
+						$('audio').get(0).pause();
+					}
+				}
+			});
+
+			// $('a.cancel').on('tap', function(){
+			// 	$('#indextip, #indexmask').css('display', 'none');
+			// });
+
+		});
+	</script>
+</body>
+</html>

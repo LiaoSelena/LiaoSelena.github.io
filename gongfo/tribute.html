@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">	
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no, email=no" />
+	<title>贡品</title>
+	<script type="text/javascript" src="js/flexible.js"></script>
+	<script type="text/javascript" src="js/pageLoading.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/tribute.css">
+</head>
+<body>
+	<div class="tribute">
+		<div class="chooseRow">
+			<div class="flower ch" data-name="花篮">
+				<img src="images/hp_no2.png" alt="空花篮">
+			</div>
+			<div class="stove ch" data-name="香炉">
+				<img src="images/xl_no2.png" alt="空香炉">
+			</div>
+			<div class="fruit ch" data-name="果盘">
+				<img src="images/gp_no2.png" alt="空果盘">
+			</div>
+		</div>
+		<div class="chooseBox">
+			<ul class="chooselist flower">
+				<li>
+					<img src="images/hp02.png" alt="花篮">
+					<span class="money">免费</span>
+				</li>
+				<li>
+					<img src="images/hp03.png" alt="花篮">
+					<span class="money">0.28元</span>
+				</li>
+				<li>
+					<img src="images/hp04.png" alt="花篮">
+					<span class="money">0.68元</span>
+				</li>
+				<li>
+					<img src="images/hp05.png" alt="花篮">
+					<span class="money">0.88元</span>
+				</li>
+				<li>
+					<img src="images/hp02.png" alt="花篮">
+					<span class="money">1.28元</span>
+				</li>
+			</ul>
+			<ul class="chooselist stove">
+				<li>
+					<img src="images/xl02.png" alt="香炉">
+					<span class="money">免费</span>
+				</li>
+				<li>
+					<img src="images/xl03.png" alt="香炉">
+					<span class="money">1.08元</span>
+				</li>
+				<li>
+					<img src="images/xl04.png" alt="香炉">
+					<span class="money">6.66元</span>
+				</li>
+				<li>
+					<img src="images/xl05.png" alt="香炉">
+					<span class="money">8.88元</span>
+				</li>
+				<li>
+					<img src="images/xl02.png" alt="香炉">
+					<span class="money">8.88元</span>
+				</li>
+			</ul>
+			<ul class="chooselist fruit">
+				<li>
+					<img src="images/gp02.png" alt="果盘">
+					<span class="money">免费</span>
+				</li>
+				<li>
+					<img src="images/gp03.png" alt="果盘">
+					<span class="money">0.66元</span>
+				</li>
+				<li>
+					<img src="images/gp04.png" alt="果盘">
+					<span class="money">1.66元</span>
+				</li>
+				<li>
+					<img src="images/gp05.png" alt="果盘">
+					<span class="money">2.66元</span>
+				</li>
+				<li>
+					<img src="images/gp02.png" alt="果盘">
+					<span class="money">3.66元</span>
+				</li>
+			</ul>
+		</div>
+		<div class="chooseBtn">
+			<a href="javascript:;" title="确定贡品"></a>
+		</div>
+	</div>
+	<div class="pagetips" id="pagetips">
+	    <div class="title">随喜赞叹</div>
+	    <div class="cont">
+	        您的供佛发心，付费贡品善款皆用于本系统技 术研发和供养寺院师傅，若您经济困难可使用 免费贡品，心诚则灵
+	    </div>
+	    <ul class="ptbtn">
+	        <li><a href="index_change.html">好</a></li>
+	    </ul>
+	</div>
+	<script src="js/zepto.min.js"></script>
+	<script>
+		$(function(){
+
+			$('ul.chooselist>li').on('tap', function(){
+				var index = $(this).parent().index(),
+					src = $(this).find('img').attr('src');
+				$(this).parents('.chooseBox').prev().find('.ch').eq(index).addClass('change').find('img').attr('src', src);
+			});
+
+			$('.chooseBtn>a').on('tap', function(){
+				var flag = true, names = "";
+				$('.chooseRow>.ch').each(function(index, el) {					
+					if(!$(this).hasClass('change')){
+						var name = $(this).attr('data-name');
+						names += name + "，";
+						flag = false;
+					}
+				});
+
+				if(flag) {
+					$('#pagetips').css('display', 'block');
+				}else {
+					names = names.substr(0,names.length-1);
+					alert("您还没选择："+names);
+					flag = true;
+					names = "";
+				}
+			});
+
+		});
+	</script>
+</body>
+</html>

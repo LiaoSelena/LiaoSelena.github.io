@@ -1,0 +1,14 @@
+
+$fsbase: 75;
+
+@mixin fdpr($fs){
+    font-size: $fs;
+
+    [data-dpr="2"] & {
+        font-size: $fs * 2;
+    }
+
+    [data-dpr="3"] & {
+        font-size: $fs * 3;
+    }
+}
