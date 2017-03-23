@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--{{head.html}}-->
+    <style type="text/css">
+		/*liuxue2345*/
+		.liuxue-container{ position:relative; width:1000px;}
+		.clear{ clear:both;}
+		/*banner*/
+		.liuxue-container .banner{ position:relative; width:1000px; margin:0 auto;}
+		.liuxue-container .banner img{ width:1000px !important; height:425px !important;}
+		.liuxue-container .banner-content .banner-arrow-content{ position:absolute; width:90px; height:57px; background:url(../images/btn_bg.png) no-repeat; right:30px;    z-index: 99999; top:340px;}
+		
+		/*分类导航*/
+		.luntan-content{ position:relative;height:100px; margin:30px auto; width:100%;}
+		.luntan-content ul{ position:relative;}
+		.luntan-content ul li{ position:relative; width:100px; height:92px; border:1px solid #eaeaea; margin-left:15px; float:left; text-align:center; font-size:14px; color:#333333;}
+		.luntan-content ul .luntan-content-item-first{ position:relative; margin:0px; background:#338ad1; width:77px; color:#ffffff; font-size:18px;line-height: 25px;padding-top: 10px;}
+		.luntan-content ul li:hover{ background:#338ad1; border:1px solid #338ad1; color:#fff;}
+		.luntan-content ul li .icon{ background-repeat:no-repeat; background-position: left center; height:30px; margin:20px auto 10px;}
+		/*选校指导*/
+		.xuanxiao-content{ position:relative;}
+		.xuanxiao-left{ position:relative; width:670px; float:left;}
+		.xuanxiao-right{ position:relative; width:310px; float:right;}
+		.xuanxiao-title{ position:relative; border-bottom:1px solid #eaeaea; width:670px; height:30px; padding-bottom:30px; line-height:30px; font-size:12px;}
+		.xuanxiao-title .xuanxiao-title-text1{ position:relative; float:left; color:#338ad1; font-size:18px; border-bottom:1px solid #338ad1; height:30px; padding-bottom:30px; }
+		.xuanxiao-title .xuanxiao-title-text2{ position:relative; float:left; color:#999999; margin-left:10px; font-size:14px;}
+		.xuanxiao-title .xuanxiao-title-text3{ position:relative; float:right; margin-right:15px; color:#999999;}
+		.xuanxiao-title .xuanxiao-title-text3:hover{ color:#338ad1;}
+		.nation-list{position:relative; margin:15px 0px 20px 0px;}
+		.nation-list ul li{ position:relative; float:left; color:#333333; font-size:12px; width:111px; text-align:center;}
+		.nation-list ul li:hover{ color:#338ad1;}
+		.college-list{position:relative; width:100%;}
+		.college-list .college-item{ position:relative; margin-bottom:15px; float:left; width:324px; height:144px; border:1px solid #eaeaea; text-align:center;}
+		.college-list .college-item:hover{ border:1px solid #338ad1;}
+		.college-list ul{ position:relative; float:left; width:320px; margin-right:10px;}
+		.college-list ul li{ position:relative; border-bottom:1px dotted #cccccc; color:#333333; width:320px; height:30px; line-height:30px; text-align:left; }
+		.college-list ul li:hover{ color:#338ad1;}
+		
+		.xuanxiao-right-test{ position:relative; width:310px; height:317px; border:1px solid #eaeaea;}
+		.xuanxiao-right-test .title{position:relative; border-bottom:1px solid #eaeaea; height:40px;text-align:left; width:100%; padding-left:20px; padding-top: 7px;}
+		.xuanxiao-right-test .title .title-text{position:relative; border-left:2px solid #338ad1; font-size:18px; color:#338ad1; padding-left:5px; height:25px;}
+		.xuanxiao-right-test .test-form{ position:relative; margin:10px auto;}
+		.xuanxiao-right-test .test-form .select-content{ position:relative; float:left; margin-left:15px; margin-bottom:15px; width:130px;}
+		.xuanxiao-right-test .test-form .select-content select{ position:absolute; filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity: 0; cursor:pointer; z-index:999; width:130px; height:40px; top:0px; left:0px;}
+		.xuanxiao-right-test .test-form .select-content .select-show{ position:relative; cursor:pointer; background:url(../images/liuxue_select-bg.png) no-repeat; width:130px; height:40px; text-align:left; padding-left:10px; font-size:12px; color:#999999; line-height:40px;}
+		.xuanxiao-right-test .test-form .phone-input{ position:relative; line-height:40px; border:1px solid #eaeaea; text-align:center; font-size:12px; color:#999999; height:40px; width:276px; margin:0px 0px 15px 15px;}
+		.yzm-content{ position:relative;padding: 0 15px;}
+		.yzm-content .yzm-input{ position:relative;width: 182px; padding-left:10px; font-size:12px; line-height:40px; color:#999999; height:40px; border:1px solid #eaeaea;}
+		.yzm-content .yzm-btn{ position:relative; width:90px; height:40px;line-height:40px; background:#338ad1; border:none; font-size:12px; color:#fff;}
+		
+		.xuanxiao-right .test-form .submit-btn{ position:relative; border:none; margin-top:10px; font-size:14px; color:#ffffff; height:40px; line-height:40px; width:276px; margin-left:15px; background:#338ad1;}
+		.xuanxiao-right .test-form .submit-btn:hover{ background:#186fbf;}
+		
+		.result-text{ position:relative; display:none; color:#666666; text-align:left; padding:20px 15px; font-size:16px; line-height:30px;}
+		.result-text h3{ color:#333333; font-size:18px;}
+		.result-text span{ color:#338ad1;}
+		
+		.xuanxiao-right .image-link{ position:relative; margin-top:27px;}
+		
+		
+		/*留学攻略*/
+		.gonglue-content{ position:relative; margin-top:30px;}
+		.gonglue-left{ position:relative; width:670px; float:left;}
+		.gonglue-right{ position:relative; width:310px; float:right;}
+		.gonglue-title{ position:relative; border-bottom:1px solid #eaeaea; width:670px; height:30px; padding-bottom:30px; line-height:30px; font-size:12px;}
+		.gonglue-title .gonglue-title-text1{ position:relative; float:left; color:#338ad1; font-size:18px; border-bottom:1px solid #338ad1; height:30px; padding-bottom:30px; }
+		.gonglue-title .gonglue-title-text2{ position:relative; float:left; color:#999999; margin-left:10px; font-size:14px;}
+		.gonglue-title .gonglue-title-text3-list{ position:relative; float:right;}
+		.gonglue-title .gonglue-title-text3-list li{ position:relative; float: left; height:23px;  border-left:1px solid #eaeaea; color:#333333; font-size:12px; width:60px; text-align:center;line-height: 23px;}
+		.gonglue-title .gonglue-title-text3-list li:hover{ color:#338ad1;}
+		.gonglue-content .gonglue-article-content{ position:relative; margin-top:20px; width:670px;}
+		.gonglue-content .gonglue-article-content .gonglue-article-item{ position:relative; cursor:pointer; width:670px; border-bottom:1px dotted #cccccc; height:90px; padding-bottom:20px; margin:20px auto;}
+		.gonglue-article-item .article-img{ position:relative; float:left;}
+		.gonglue-article-item .article-desc{ position:relative; float:left; width:550px; margin-left:20px; color:#333333; overflow:hidden;}
+		.gonglue-article-item .article-desc .article-title{ position:relative; font-size:16px; text-align:left;}
+		.gonglue-article-item .article-desc .article-digest{ position:relative; font-size:12px; text-align:left; height:45px;overflow-y: hidden; margin-top:15px; line-height:20px;}
+		.gonglue-article-item .article-desc .article-read img{ display:initial; margin-right:10px; }
+		.gonglue-article-item .article-desc .article-read{ position:absolute; color:#999999; font-size:12px;right: 20px; top: 59px;}
+		
+		
+		.gonglue-right .jijing-subscribe-down{background-color: #338ad1;}
+		.gonglue-right .icon-dingyue:before{content:url(../images/liuxue-feiyong-icon.png);}
+		.gonglue-right .gonglue-right-slide{ position:relative; margin-top:43px;width:310px;}
+		.gonglue-right .jijing-subscribe-down .icon-dingyue{ margin-left:30px;}
+		
+		
+		/*留学备考*/
+		.beikao-content{ position:relative; margin-top:30px;}
+		.beikao-left{ position:relative; width:670px; float:left;}
+		.beikao-right{ position:relative; width:310px; float:right;}
+		.beikao-title{ position:relative; border-bottom:1px solid #eaeaea; width:670px; height:30px; padding-bottom:30px; line-height:30px; font-size:12px;}
+		.beikao-title .beikao-title-text1{ position:relative; float:left; color:#338ad1; font-size:18px; border-bottom:1px solid #338ad1; height:30px; padding-bottom:30px; }
+		.beikao-title .beikao-title-text2{ position:relative; float:left; color:#999999; margin-left:10px; font-size:14px;}
+		.beikao-title .beikao-title-text3-list{ position:relative; float:right;}
+		.beikao-title .beikao-title-text3-list li{ position:relative; float: left; height:23px;  border-left:1px solid #eaeaea; color:#333333; font-size:12px; width:60px; text-align:center;line-height: 23px;}
+		.beikao-title .beikao-title-text3-list li:hover{ color:#338ad1;}
+		.beikao-content .beikao-article-content{ position:relative; margin-top:20px; width:670px;}
+		.beikao-content .beikao-article-content .beikao-article-item{ position:relative; cursor:pointer; width:670px; border-bottom:1px dotted #cccccc; height:90px; padding-bottom:20px; margin:20px auto;}
+		.beikao-article-item .article-img{ position:relative; float:left;}
+		.beikao-article-item .article-desc{ position:relative; float:left; width:550px; margin-left:20px; color:#333333; overflow:hidden;}
+		.beikao-article-item .article-desc .article-title{ position:relative; font-size:16px; text-align:left;}
+		.beikao-article-item .article-desc .article-digest{ position:relative; font-size:12px; text-align:left; height:45px;overflow-y: hidden; margin-top:15px; line-height:20px;}
+		.beikao-article-item .article-desc .article-read img{ display:initial; margin-right:10px; }
+		.beikao-article-item .article-desc .article-read{ position:absolute; color:#999999; font-size:12px;right: 20px; top: 59px;}
+		
+		
+		.beikao-right .jijing-subscribe-down{background-color: #338ad1;}
+		.beikao-right .icon-dingyue:before{content:url(../images/liuxue-beikao-icon.png);}
+		.beikao-right .beikao-right-slide{ position:relative; margin-top:43px;width:310px;}
+		
+		.beikao-right .jijing-subscribe-down .icon-dingyue{ margin-left:30px;}
+		/*liuxue2345end*/
+    </style>
+  	<script type="text/javascript">
+    	$(document).ready(function(e) {
+			$('#destination-select').on('change',function(e){
+			var val = $(this).find('option:selected').val();
+			$('.destination-select').html(val);
+		});
+		
+		
+		$('#time-select').on('change',function(e){
+			var val = $(this).find('option:selected').val();
+			$('.time-select').html(val);
+		});
+		
+		
+		$('#major-select').on('change',function(e){
+			var val = $(this).find('option:selected').val();
+			$('.major-select').html(val);
+		});
+		
+		
+		$('#ranking-select').on('change',function(e){
+			var val = $(this).find('option:selected').val();
+			$('.ranking-select').html(val);
+		});
+		
+		
+		$('.phone-input').focus(function(){
+			if($(this).val()==$(this).prop('defaultValue'))
+			{
+				$(this).val('');
+			}	
+		});
+		$('.phone-input').blur(function(){
+			if($(this).val()==(''))
+			{
+				$(this).val('请输入您的手机号');
+			}	
+		});
+		
+		
+		$('.yzm-input').focus(function(){
+			if($(this).val()==$(this).prop('defaultValue'))
+			{
+				$(this).val('');
+			}	
+		});
+		$('.yzm-input').blur(function(){
+			if($(this).val()==(''))
+			{
+				$(this).val('请输入验证码');
+			}	
+		});
+		/*留学2345页面*/
+	$('.luntan-content-item').on('mouseover',function(){
+		$('.luntan-content-item .icon').css('background-position','left center');	
+		$(this).find('.icon').css('background-position','right center');	
+	});
+	$('.luntan-content-item').on('mouseout',function(){
+		$('.luntan-content-item .icon').css('background-position','left center');
+	});
+	
+	
+	$('.gonglue-article-item').on('mouseover',function(){
+		$(this).find('.article-desc').css('color','#338ad1');
+	})
+	$('.gonglue-article-item').on('mouseout',function(){
+		$('.gonglue-article-item').find('.article-desc').css('color','#333333');
+	})
+	
+	$('.beikao-article-item').on('mouseover',function(){
+		$(this).find('.article-desc').css('color','#338ad1');
+	})
+	$('.beikao-article-item').on('mouseout',function(){
+		$('.beikao-article-item').find('.article-desc').css('color','#333333');
+	})
+            $('.beikao-slider').flexslider({
+				animation: "slide",
+				slideshowSpeed: 5000,
+				slideshow: true,
+				controlNav: false,
+				prevText: "", 
+        		nextText: "",
+			  });
+			  $('.gonglue-slider').flexslider({
+				animation: "slide",
+				slideshowSpeed: 5000,
+				slideshow: true,
+				controlNav: false,
+				prevText: "", 
+        		nextText: "",
+			  });
+
+        });
+        function sendVeriCode (callback) {
+	var tel =$('.phone-input').val();
+	var telReg = !tel.match(/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/);
+	
+	if(tel==''||tel==null)
+	{
+		alert('请填写手机号码！');
+		return false;	
+	}
+	if(telReg==true)
+	{
+		alert('请填写正确的手机号码');
+		return false;
+	}
+	else
+	{
+		var waitTimeInterval = 60;
+		$('.yzm-btn').prop('disabled', true);
+		$('.yzm-btn').val('重新发送(' + waitTimeInterval + '秒)');
+		var time = waitTimeInterval;
+		var verifyTimer = null;
+		clearTimeout(verifyTimer);
+		(function startSendVeriCodeTimer () {
+			verifyTimer = setTimeout(function () {
+				time --;
+				$('.yzm-btn').val('重新发送(' + ('0' + time).slice(-2) + '秒)');
+				if (time > 0) {
+					startSendVeriCodeTimer();
+				} else {
+					$('.yzm-btn').prop('disabled', false);
+					$('.yzm-btn').val('重新发送');
+					time = waitTimeInterval;
+					if ($.isFunction(callback)) {
+						callback($('.yzm-btn'));
+					}
+				}
+			}, 1000);
+		})();	
+	}
+			
+}
+		
+		function submitForm(){
+			var destination=$('.destination-select').html();
+			var time=$('.time-select').html();
+			var major=$('.major-select').html();
+			var ranking=$('.ranking-select').html();
+			var phone=$('.phone-input').val();
+			var yzm=$('.yzm-input').val();
+			if(destination==''||destination=='留学目的地')
+			{
+				alert('请选择留学目的地！')
+				return false	
+			}
+			if(time==''||time=='计划出国时间')
+			{
+				alert('请选择计划出国时间！')
+				return false	
+			}
+			if(major==''||major=='计划就读专业')
+			{
+				alert('请选择计划就读专业！')
+				return false	
+			}
+			if(ranking==''||ranking=='期望大学排名')
+			{
+				alert('请选择期望大学排名！')
+				return false	
+			}
+			if(phone==''||phone==null||phone=='请输入您的手机号')
+			{
+				alert('请输入您的手机号！')
+				return false		
+			}
+			if(yzm==''||yzm==null||yzm=='请输入验证码')
+			{
+				alert('请输入验证码！')
+				return false		
+			}
+			else
+			{
+				if(yzm=='1234')
+				{
+					$('.result-text').show();
+					$('.test-form').hide();	
+					$('.destination').html(destination);
+					$('.ranking').html(ranking);
+					$('.major').html(major);
+				}
+				else
+				{
+					alert('验证码错误');
+					return false;
+				}	
+			}
+		}
+
+    </script>
+</head>
+<body>
+    <div class="liuxue-container">
+    	<!--banner-->
+    	<div class="banner-content">
+        	<div class="container-fluid" id="set-index-ban-style">
+            	<div class="banner-arrow-content"></div>
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <a href="http://zt.zhan.com/liuxueshenqing40873.html" target="_blank"><img src="images/liuxue-banner1.jpg" alt="" title=""></a>
+                        </div>
+                        <div class="item">
+                            <a href="http://zt.zhan.com/toeflbeikao42275.html" target="_blank"><img src="images/liuxue-banner2.jpg" alt="" title=""></a>
+                        </div>
+                        <div class="item">
+                            <a href="http://zt.zhan.com/ysziliao42279.html" target="_blank"><img src="images/liuxue-banner3.jpg" alt="" title=""></a>
+                        </div>
+                        <div class="item">
+                            <a href="http://zt.zhan.com/satkaoqian42640.html" target="_blank"><img src="images/liuxue-banner4.jpg" alt="" title=""></a>
+                        </div>
+                        <div class="item">
+                            <a href="http://zt.zhan.com/liuxuelife40874.html" target="_blank"><img src="images/liuxue-banner5.jpg" alt="" title=""></a>
+                        </div>
+                        <div class="item">
+                            <a href="http://zt.zhan.com/grerumen41495.html" target="_blank"><img src="images/liuxue-banner6.jpg" alt="" title=""></a>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <!-- <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span> -->
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span> -->
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--论坛版块-->
+        <div class="luntan-content">
+        	<ul class="luntan-content-list">
+           		<li class="luntan-content-item-first">留学<br>备考<img src="images/liuxue_arrow1.png" style="position:absolute;right: 20px;top: 65px;"></li>
+                <a href="http://bbs.zhan.com/forum-gid-36.html " target="_blank">
+                	<li class="luntan-content-item">
+                    	<div class="icon" style="background:url(images/liuxue_nav_img1.png); width:27px;"></div>
+                        <div class="text">托福考试</div>
+                	</li>
+                </a>
+                <a href="http://toefl.zhan.com/tfjijing/ " target="_blank">
+                	<li class="luntan-content-item">
+                    	<div class="icon" style="background:url(images/liuxue_nav_img2.png); width:32px;"></div>
+                        <div class="text">托福机经</div>
+                	</li>
+                </a>
+                <a href="http://bbs.zhan.com/forum-gid-37.html " target="_blank">
+                	<li class="luntan-content-item">
+                    	<div class="icon" style="background:url(images/liuxue_nav_img3.png); width:23px;"></div>
+                        <div class="text">雅思考试</div>
+                	</li>
+                </a>
+                <a href="http://ielts.zhan.com/jijing/ " target="_blank">
+                	<li class="luntan-content-item">
+                    	<div class="icon" style="background:url(images/liuxue_nav_img4.png); width:25px;"></div>
+                        <div class="text">雅思机经</div>
+                	</li>
+                </a>
+                <a href="http://bbs.zhan.com/forum-gid-38.html " target="_blank">
+                	<li class="luntan-content-item">
+                    	<div class="icon" style="background:url(images/liuxue_nav_img5.png); width:30px;"></div>
+                        <div class="text">SAT考试</div>
+                	</li>
+                </a>
+                <a href="http://bbs.zhan.com/forum-62-1.html " target="_blank">
+                	<li class="luntan-content-item">
+                    	<div class="icon" style="background:url(images/liuxue_nav_img6.png); width:29px;"></div>
+                        <div class="text">GRE考试</div>
+                	</li>
+                </a>
+                <a href="http://bbs.zhan.com/forum-56-1.html" target="_blank">
+                	<li class="luntan-content-item">
+                    	<div class="icon" style="background:url(images/liuxue_nav_img7.png); width:32px;"></div>
+                        <div class="text">GMAT考试</div>
+                	</li>
+                </a>
+                <a href="http://bbs.zhan.com/forum-gid-52.html " target="_blank">
+                	<li class="luntan-content-item">
+                    	<div class="icon" style="background:url(images/liuxue_nav_img8.png); width:42px;"></div>
+                        <div class="text">留学指导</div>
+                	</li>
+                </a>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <!--留学内容-->
+        <div class="liuxue-content">
+        	<!--选校指导-->
+        	<div class="xuanxiao-content">
+            	<div class="xuanxiao-left">
+                	<div class="xuanxiao-title">
+                    	<div class="xuanxiao-title-text1">选校指导</div>
+                        <div class="xuanxiao-title-text2">Colleage</div>
+                        <a href="http://college.zhan.com/list/" target="_blank">
+                        	<div class="xuanxiao-title-text3">留学名校库</div>
+                        	<img src="images/liuxue_arrow.png" style="position:absolute; right:0px; top:12px;">
+                        </a>
+                        <div class="clear"></div>
+                    </div>
+                	<div class="nation-list">
+                    	<ul>
+                        	<a href="http://college.zhan.com/list/c3/ " target="_blank">
+                            	<li class="nation-item">美国</li>
+                            </a>
+                        	<a href="http://college.zhan.com/list/c19/ " target="_blank">
+                            	<li class="nation-item">英国</li>
+                            </a>
+                        	<a href="http://college.zhan.com/list/c28/ " target="_blank">
+                            	<li class="nation-item">加拿大</li>
+                            </a>
+                        	<a href="http://college.zhan.com/list/c55/ " target="_blank">
+                            	<li class="nation-item">澳大利亚</li>
+                            </a>
+                            <a href="http://college.zhan.com/list/c45/ " target="_blank">
+                        		<li class="nation-item">德国</li>
+                            </a>
+                            <a href="http://college.zhan.com/list/c46/ " target="_blank">
+                        		<li class="nation-item" style="border:none;">法国</li>
+                            </a>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                	<div class="college-list">
+                    	<a href="http://college.zhan.com/list/79.html" target="_blank"><div class="college-item"><img src="images/college_img1.jpg"></div></a>
+                    	<a href="http://college.zhan.com/list/76.html" target="_blank"><div class="college-item" style="margin-left:22px;"><img src="images/college_img2.jpg"></div></a>
+                    	<a href="http://college.zhan.com/list/380.html" target="_blank"><div class="college-item"><img src="images/college_img3.jpg"></div></a>
+                    	<a href="http://college.zhan.com/list/81.html" target="_blank"><div class="college-item" style="margin-left:22px;"><img src="images/college_img4.jpg"></div></a>
+                    	<div class="clear"></div>
+                    </div>
+                	<div class="college-list">
+                    	<ul style="margin-right: 20px;">
+                        	<img src="images/stars.png">
+                        	<a href="http://college.zhan.com/ranking/r32/" target="_blank"><li>• USNEWS世界大学排名</li></a>
+                        	<a href="http://college.zhan.com/ranking/r31/" target="_blank"><li>• USNEWS 美国大学综合排名</li></a>
+                        	<a href="http://college.zhan.com/ranking/r34/" target="_blank"><li>• 泰晤士世界大学排行榜</li></a>
+                        	<a href="http://college.zhan.com/ranking/r37/" target="_blank"><li>• QS世界大学排行榜</li></a>
+                        	<a href="http://college.zhan.com/ranking/r38/" target="_blank"><li>• 福布斯美国大学排行榜</li></a>
+                        </ul>
+                        <ul>
+                        	<img src="images/stars.png">
+                        	<a href="http://college.zhan.com/ranking/r33/" target="_blank"><li>• 世界大学学术排行榜</li></a>
+                        	<a href="http://college.zhan.com/ranking/r35/" target="_blank"><li>• USNEWS美国文理学院排行榜</li></a>
+                        	<a href="http://college.zhan.com/ranking/r25/" target="_blank"><li>• USNEWS加拿大大学排名</li></a>
+                        	<a href="http://college.zhan.com/ranking/r24/" target="_blank"><li>• USNEWS英国大学排名</li></a>
+                        	<a href="http://college.zhan.com/ranking/r18/" target="_blank"><li>• 美国大学工资排名</li></a>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            	<div class="xuanxiao-right">
+                	<div class="xuanxiao-right-test">
+                    	<div class="title">
+                    	<div class="title-text">
+                        	测一测你适合去哪所大学
+                        </div>
+                    </div>
+                		<div class="test-form">
+                    	<form>
+                        	<div class="select-content">
+                            	<div class="select-show destination-select">留学目的地</div>
+                            	<select id="destination-select">
+                                	<option>留学目的地</option>
+                                	<option>美国</option>
+                                	<option>英国</option>
+                                	<option>加拿大</option>
+                                	<option>澳洲</option>
+                                </select>
+                            </div>
+                            <div class="select-content">
+                            	<div class="select-show time-select">计划出国时间</div>
+                            	<select id="time-select">
+                                	<option>计划出国时间</option>
+                                	<option>2016年</option>
+                                	<option>2017年</option>
+                                	<option>暂未确定</option>
+                                </select>
+                            </div>
+                            <div class="select-content">
+                            	<div class="select-show major-select">计划就读专业</div>
+                            	<select id="major-select">
+                                	<option>计划就读专业</option>
+                                	<option>商科</option>
+                                	<option>工程科</option>
+                                	<option>人文艺术类</option>
+                                	<option>自然科学类</option>
+                                </select>
+                            </div>
+                            <div class="select-content">
+                            	<div class="select-show ranking-select">期望大学排名</div>
+                            	<select id="ranking-select">
+                                	<option>期望大学排名</option>
+                                	<option>世界TOP 1-50</option>
+                                	<option>世界TOP 51-100</option>
+                                	<option>世界TOP 101-200</option>
+                                </select>
+                            </div>
+                            <div class="clear"></div>
+                            <input type="text" class="phone-input" value="请输入您的手机号">
+                            <div class="yzm-content">
+                                <input type="text" class="yzm-input" value="请输入验证码" />          
+                                <input type="button" class="yzm-btn" value="获取验证码" onClick="sendVeriCode();" />
+                            </div>
+                            <input type="button" class="submit-btn" value="免费留学评估" onClick="submitForm();">
+                        </form>
+                    	</div>
+                        <div class="result-text">
+                            <h3>这位同学：</h3>
+                            您选择赴<span class="destination">加拿大</span>留学，就读<span class="ranking">世界TOP 101-200</span>大学<span class="major">自然科学类</span>专业，根据您的情况，可选择的大学较多，请保持手机通畅，小站教育的<span class="destination">加拿大</span>留学顾问将联系您做更详尽的评估！
+                    	</div>
+                    </div>
+                    <div class="image-link">
+                    	<div class="right-section-banner">
+                            <a target="_blank" href="http://liuxue.zhan.com/"> <img width="310" height="206" title="【托福口语】12月5日考前预测点题课" alt="【托福口语】12月5日考前预测点题课" src="images/img-link.jpg"></a>
+                            <a target="_blank" href="http://liuxue.zhan.com/" class="right-banner-title">【托福口语】12月5日考前预测点题课</a>
+                    	</div>
+                	</div>
+                </div>
+                
+            	<div class="clear"></div>
+            </div>
+        	<!--留学攻略-->
+        	<div class="gonglue-content">
+            	<div class="gonglue-left">
+                	<div class="gonglue-title">
+                    	<div class="gonglue-title-text1">留学攻略</div>
+                        <div class="gonglue-title-text2">Abroad</div>
+                        <div class="gonglue-title-text3-list">
+                        	<ul>
+                            	<a href="http://liuxue.zhan.com/feiyong/" target="_blank"><li style="border:none;">费用</li></a>
+                            	<a href="http://liuxue.zhan.com/shenqing/" target="_blank"><li>申请</li></a>
+                            	<a href="http://liuxue.zhan.com/abroad/" target="_blank"><li>海外</li></a>
+                            	<a href="http://liuxue.zhan.com/yimin/" target="_blank"><li>移民</li></a>
+                            	<a href="http://liuxue.zhan.com/huiguo/" target="_blank"><li>归国</li></a>
+                                <div class="clear"></div>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="gonglue-article-content">
+                    	<a href="#" target="_blank">
+                        	<div class="gonglue-article-item">
+                                <div class="article-img">
+                                    <img src="images/article-img.jpg">
+                                </div>
+                                <div class="article-desc">
+                                    <div class="article-title">【考试资讯】关于2016年托福考试日期和费用调整的通知
+                                    </div>
+                                    <div class="article-digest">
+                                        先说一下我的成绩，这是我第三次考雅思，但是说是第三次。不如说是实际上的第一次，前两次都是6分，第一次是完全不知道雅思是什么，就去考了，第二次是知道了雅思第二次是...
+                                    </div>
+                                    <div class="article-read">
+                                    	<img src="images/liuxue_eye.png">阅读(<span id="read-num">644</span>) 
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                        	</div>
+                        </a>
+                        <a href="#" target="_blank">
+                        	<div class="gonglue-article-item">
+                                <div class="article-img">
+                                    <img src="images/article-img.jpg">
+                                </div>
+                                <div class="article-desc">
+                                    <div class="article-title">【考试资讯】关于2016年托福考试日期和费用调整的通知
+                                    </div>
+                                    <div class="article-digest">
+                                        先说一下我的成绩，这是我第三次考雅思，但是说是第三次。不如说是实际上的第一次，前两次都是6分，第一次是完全不知道雅思是什么，就去考了，第二次是知道了雅思第二次是...
+                                    </div>
+                                    <div class="article-read">
+                                    	<img src="images/liuxue_eye.png">阅读(<span id="read-num">644</span>) 
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                        	</div>
+                        </a>
+                        <a href="#" target="_blank">
+                        	<div class="gonglue-article-item">
+                                <div class="article-img">
+                                    <img src="images/article-img.jpg">
+                                </div>
+                                <div class="article-desc">
+                                    <div class="article-title">【考试资讯】关于2016年托福考试日期和费用调整的通知
+                                    </div>
+                                    <div class="article-digest">
+                                        先说一下我的成绩，这是我第三次考雅思，但是说是第三次。不如说是实际上的第一次，前两次都是6分，第一次是完全不知道雅思是什么，就去考了，第二次是知道了雅思第二次是...
+                                    </div>
+                                    <div class="article-read">
+                                    	<img src="images/liuxue_eye.png">阅读(<span id="read-num">644</span>) 
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                        	</div>
+                        </a>
+                        <a href="#" target="_blank">
+                        	<div class="gonglue-article-item">
+                                <div class="article-img">
+                                    <img src="images/article-img.jpg">
+                                </div>
+                                <div class="article-desc">
+                                    <div class="article-title">【考试资讯】关于2016年托福考试日期和费用调整的通知
+                                    </div>
+                                    <div class="article-digest">
+                                        先说一下我的成绩，这是我第三次考雅思，但是说是第三次。不如说是实际上的第一次，前两次都是6分，第一次是完全不知道雅思是什么，就去考了，第二次是知道了雅思第二次是...
+                                    </div>
+                                    <div class="article-read">
+                                    	<img src="images/liuxue_eye.png">阅读(<span id="read-num">644</span>) 
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                        	</div>
+                        </a>
+                    </div>
+                </div>
+            	<div class="gonglue-right">
+                	<a href="http://zt.zhan.com/liuxuezhinan40872.html " target="_blank" style="height: 80px;">
+                        <div class="freeOrderBtn jijing-subscribe-down clearfix">
+                            <span class="icon-dingyue"></span>
+                                <dl>
+                                    <dt>留学费用测算</dt>
+                                    <dd>赴美留学需要花费多少钱</dd>
+                                </dl>
+                            <span class="icon-you"></span>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                    <div class="gonglue-right-slide gonglue-slider">
+                      <ul class="slides">
+                        <li>
+                           <a href="#" target="_blank"><img src="images/article-img2.jpg" alt="" title=""></a>
+                        </li>
+                        <li>
+                           <a href="#" target="_blank"><img src="images/article-img2.jpg" alt="" title=""></a>
+                        </li>
+                        <li>
+                           <a href="#" target="_blank"><img src="images/article-img2.jpg" alt="" title=""></a>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            	<div class="clear"></div>
+            </div>
+        	<!--留学备考-->
+        	<div class="beikao-content">
+            	<div class="beikao-left">
+                	<div class="beikao-title">
+                    	<div class="beikao-title-text1">留学备考</div>
+                        <div class="beikao-title-text2">Examination</div>
+                        <div class="beikao-title-text3-list">
+                        	<ul>
+                            	<a href="http://toefl.zhan.com/" target="_blank"><li style="border:none;">TOEFL</li></a>
+                            	<a href="http://ielts.zhan.com/" target="_blank"><li>IELTS</li></a>
+                            	<a href="http://sat.zhan.com/" target="_blank"><li>SAT</li></a>
+                            	<a href="http://gre.zhan.com/" target="_blank"><li>GRE</li></a>
+                            	<a href="http://gmat.zhan.com/" target="_blank"><li>GMAT</li></a>
+                                <div class="clear"></div>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="beikao-article-content">
+                    	<a href="#" target="_blank">
+                        	<div class="beikao-article-item">
+                                <div class="article-img">
+                                    <img src="images/article-img.jpg">
+                                </div>
+                                <div class="article-desc">
+                                    <div class="article-title">【考试资讯】关于2016年托福考试日期和费用调整的通知
+                                    </div>
+                                    <div class="article-digest">
+                                        先说一下我的成绩，这是我第三次考雅思，但是说是第三次。不如说是实际上的第一次，前两次都是6分，第一次是完全不知道雅思是什么，就去考了，第二次是知道了雅思第二次是...
+                                    </div>
+                                    <div class="article-read">
+                                    	<img src="images/liuxue_eye.png">阅读(<span id="read-num">644</span>) 
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                        	</div>
+                        </a>
+                        <a href="#" target="_blank">
+                        	<div class="beikao-article-item">
+                                <div class="article-img">
+                                    <img src="images/article-img.jpg">
+                                </div>
+                                <div class="article-desc">
+                                    <div class="article-title">【考试资讯】关于2016年托福考试日期和费用调整的通知
+                                    </div>
+                                    <div class="article-digest">
+                                        先说一下我的成绩，这是我第三次考雅思，但是说是第三次。不如说是实际上的第一次，前两次都是6分，第一次是完全不知道雅思是什么，就去考了，第二次是知道了雅思第二次是...
+                                    </div>
+                                    <div class="article-read">
+                                    	<img src="images/liuxue_eye.png">阅读(<span id="read-num">644</span>) 
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                        	</div>
+                        </a>
+                        <a href="#" target="_blank">
+                        	<div class="beikao-article-item">
+                                <div class="article-img">
+                                    <img src="images/article-img.jpg">
+                                </div>
+                                <div class="article-desc">
+                                    <div class="article-title">【考试资讯】关于2016年托福考试日期和费用调整的通知
+                                    </div>
+                                    <div class="article-digest">
+                                        先说一下我的成绩，这是我第三次考雅思，但是说是第三次。不如说是实际上的第一次，前两次都是6分，第一次是完全不知道雅思是什么，就去考了，第二次是知道了雅思第二次是...
+                                    </div>
+                                    <div class="article-read">
+                                    	<img src="images/liuxue_eye.png">阅读(<span id="read-num">644</span>) 
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                        	</div>
+                        </a>
+                        <a href="#" target="_blank">
+                        	<div class="beikao-article-item">
+                                <div class="article-img">
+                                    <img src="images/article-img.jpg">
+                                </div>
+                                <div class="article-desc">
+                                    <div class="article-title">【考试资讯】关于2016年托福考试日期和费用调整的通知
+                                    </div>
+                                    <div class="article-digest">
+                                        先说一下我的成绩，这是我第三次考雅思，但是说是第三次。不如说是实际上的第一次，前两次都是6分，第一次是完全不知道雅思是什么，就去考了，第二次是知道了雅思第二次是...
+                                    </div>
+                                    <div class="article-read">
+                                    	<img src="images/liuxue_eye.png">阅读(<span id="read-num">644</span>) 
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                        	</div>
+                        </a>
+                    </div>
+                </div>
+            	<div class="beikao-right">
+                	<a href="http://toefl.zhan.com/tfjijing/" target="_blank" style="height: 80px;">
+                        <div class="freeOrderBtn jijing-subscribe-down clearfix">
+                            <span class="icon-dingyue"></span>
+                                <dl>
+                                    <dt>托福机经预测</dt>
+                                    <dd>最新预测 第一时间通知下载</dd>
+                                </dl>
+                            <span class="icon-you"></span>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                    <div class="beikao-right-slide beikao-slider">
+                      <ul class="slides">
+                        <li>
+                           <a href="#" target="_blank"><img src="images/article-img2.jpg" alt="" title=""></a>
+                        </li>
+                        <li>
+                           <a href="#" target="_blank"><img src="images/article-img2.jpg" alt="" title=""></a>
+                        </li>
+                        <li>
+                           <a href="#" target="_blank"><img src="images/article-img2.jpg" alt="" title=""></a>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            	<div class="beikao-left"></div>
+            	<div class="beikao-right"></div>
+            	<div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

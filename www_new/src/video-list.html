@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--{{head.html}}-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+			$(".youku").fancybox({
+			'width'             : 800,
+			'height'            : 530,
+			'autoScale'         : false,
+			'type'              : 'iframe'
+			});
+        });
+    </script>
+    <script type="text/javascript">
+        var pubCoursePopup = {
+            isLogin: false,
+            mobile: '1xxx',
+            // 发短信接口地址
+            smsUrl: null,
+            // 发邮件
+            emailUrl: null,
+            // 保存线索
+            clueUrl: null,
+            // 注册
+            registerUrl: null,
+            // 登录
+            loginUrl: null,
+            // 订阅
+            orderUrl: null
+        }
+    </script>
+</head>
+<body>
+	<!--********** 头部 代码Start *********** -->
+    <!--{{head-newvideo-top.html}}-->
+    <!--{{video-head-index.html}}-->
+    <!-- ***********  内容区域 ************** -->
+    <div class="content-area clearfix">
+    	<div class="content-left">
+        	<!--{{video-label-choose.html}}-->
+            <!--{{video-display-area.html}}-->
+        </div>
+        <div class="content-right">
+        	<!--{{video-recommed.html}}-->
+            <!--{{video-subscribe.html}}-->
+            <!--{{video-abroad-guide.html}}-->
+            <!--{{image-link.html}}-->
+            <!--{{video-abroad-information.html}}-->
+            <!--{{video-hot-searching.html}}-->
+        </div>
+    </div>
+    <div class="foot">
+    	<!--********** 底部 代码Start ********* -->
+    	<!--{{foot.html}}-->
+    </div>
+</body>
+</html>

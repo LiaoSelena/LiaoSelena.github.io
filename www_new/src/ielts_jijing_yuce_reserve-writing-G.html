@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--{{head.html}}-->
+    <script type="text/javascript">
+        // 机经列表页详情页弹框，订阅和下载功能
+        var jijingPopup = {
+            // 是否登录
+            isLogin: false,
+            // 机经详情页: jijingDetail: {...}
+            jijingDetail: {
+                articleId: 112,
+                // order: 订阅;  download: 下载
+                action: 'order',
+                downloadUrl: 'upload/a.rar'
+            }
+        }
+    </script>
+</head>
+<body class="jijing-bj-color">
+	<!--********** 头部 代码Start *********** -->
+    <!--{{head-toefl-top.html}}-->
+    <!--{{ielts-jijing-head.html}}-->
+    
+    <!-- 内容区域 -->
+    <div class="content-area">
+    	<!--{{ielts-jijing-cont-introduce-reserve.html}}-->
+        <div class="jijing-detail-cont">
+            <!--{{ielts-jijing-er-nav_yuce.html}}-->
+            <!--{{jijing-yuce-dulikouyu-cont_gong.html}}-->
+            <!-- 写作G 代码Start -->
+            <!--{{ielts-end-yuce-writing-g.html}}-->
+            
+            <!-- 评论 -->
+            <!--{{jijing-gonglue-comment-on-login.html}}-->
+        </div>
+    </div>
+    
+    <div class="foot">
+    	<!--********** 底部 代码Start ********* -->
+    	<!--{{foot-jijing.html}}-->
+    </div>
+</body>
+</html>
