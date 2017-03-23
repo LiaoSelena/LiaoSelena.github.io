@@ -1,0 +1,58 @@
+@import "reset";
+@import "fun";
+@import "nav";
+
+html,body{
+	height: 100%;
+}
+body{	
+	background: url(../images/copy_bg.png) no-repeat;
+	background-size: 100% auto;
+}
+.copybox{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 98rem/$fsbase;
+	z-index: 2;
+	padding: 60rem/$fsbase 0 30rem/$fsbase;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	&::-webkit-scrollbar{
+		opacity: 0;
+		width: 0;
+	}
+}
+.copyrow{
+	padding: 0 24rem/$fsbase 25rem/$fsbase;
+	border-bottom: 2px solid #d1c1ab;
+	.title{
+		padding: 10rem/$fsbase 0;		
+		color: #673702;
+		@include fdpr(17px);
+	}
+}
+.enterbox{
+	height: 68rem/$fsbase;
+	padding: 0 10rem/$fsbase;
+	border: 2px solid #db9c70;
+	background: rgba(208,133,45,.2);
+	.txt{
+		display: block;
+		width: 100%;
+		height: 68rem/$fsbase;
+		line-height: 68rem/$fsbase;
+		color: #bb6605;
+		background: transparent;
+		outline: none;
+		@include fdpr(16px);
+	}
+}
+.sharebtn{
+	width: 622rem/$fsbase;
+	height: 86rem/$fsbase;
+	margin: 30rem/$fsbase auto 0;
+	background: url(../images/share_btn2.png) no-repeat;
+	background-size: 100% auto;
+}
