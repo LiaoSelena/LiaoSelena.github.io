@@ -1,0 +1,349 @@
+http://twitterbootstrap3buttons.w3masters.nl/?color=%23ff2200     bootstrap按钮自动生成颜色网站
+http://materializecss.com/               materialize官方网站
+http://www.bootcss.com/                  bootstrap官方网站
+http://knockoutjs.com/documentation/css-binding.html                 knockoutjs官网
+http://zhitu.isux.us/                       图片压缩网站
+https://tinypng.com/   图片压缩网站
+http://echarts.baidu.com/  各种图表库
+http://jingyan.baidu.com/article/03b2f78c7089a95ea237aeb4.html?qq-pf-to=pcqq.discussion  字体转换工具教程
+http://www.ico.la/  在线生成ico
+http://ico.58pic.com/tubiaodaquan/   在线ico普通下载  图标库
+http://kenwheeler.github.io/slick/  各种轮播效果js库
+http://www.jq22.com/    jQuery插件库
+http://www.lanrenzhijia.com/  懒人之家 效果网站
+http://www.cnblogs.com/cloudgamer/archive/2009/12/22/ImagePreview.html  图片上传预览效果
+http://www.haorooms.com/post/css_input_uploadmh           css input[type=file] 样式美化，input上传按钮美化
+http://www.jquery123.com/   
+http://m.sui.taobao.org/components/#calendar   手机模板组件
+http://nqdeng.github.io/7-days-nodejs/#1.3      7天学会node
+http://www.swiper.com.cn/demo/index.html        swiper插件应用
+http://amazeui.org/getting-started             手机模板组件
+http://mathjax-chinese-doc.readthedocs.org/en/latest/start.html  数学公式
+http://docs.mathjax.org/en/latest/mathjax.html  数学公式 
+http://mathjax-chinese-doc.readthedocs.org/en/latest/start.html  公式API  
+file:///E:/MathJax-master/test/sample.html 数学公式
+http://cloud.youku.com/tools/?qq-pf-to=pcqq.c2c  优酷视频去广告
+http://www.w3cplus.com/css3/define-font-size-with-css3-rem     css3rem单位设置讲解
+http://www.cnblogs.com/TomXu/archive/2011/11/21/2257154.html    knockout应用开发指南
+http://www.iconfont.cn/help/platform.html         icofont制作详解
+http://www.qiuziti.com/    字体下载
+http://www.helloweba.com/view-blog-219.html   响应式内容，滚动轮播   jquery.bxslider.min.js
+http://www.zhuansoo.com/vbar/vt.html?tid=126061   如何恢复shift delete的删除文件
+http://www.360doc.com/content/14/0115/09/15454660_345396016.shtml         raphaeljs.矢量操作Javascript库
+http://layer.layui.com/skin.html     http://layer.layui.com/api.html  web弹层库(内页)
+http://layer.layui.com/api.html
+http://touch.code.baidu.com/?qq-pf-to=pcqq.c2c   手机端手势库
+http://www.jq22.com/yanshi3632     图片感应鼠标进入方向，悬浮层 (原生js库)
+http://www.hcharts.cn/index.php   纯js图表库
+emmet插件  subline 快速编译插件。
+http://blog.csdn.net/houpengfei111/article/details/8001187   图片放大API   ColorBox
+http://www.108js.com/example.html  HTML5 Canvas绘图与动画学习59例
+http://ico.58pic.com/tubiaodaquan/     图标库各种图标下载
+http://www.jq22.com/jquery-info2852  表情插件
+http://www.html5tricks.com/30-more-html5-apps.html  30几个HTML5经典动画应用回顾
+http://padding.me/blog/2014/07/04/mode-or-standard/  严格模式和怪异模式详解
+http://www.jq22.com/jquery-info472 jquery实现网易邮箱页面插件fullPage.js
+https://mp.weixin.qq.com/wiki/10/e5f772f4521da17fa0d7304f68b97d7e.html#.E4.B8.8B.E8.BD.BD.E5.9C.B0.E5.9D.80    微信公众平台开发
+http://www.cnblogs.com/rohelm/p/4033513.html  表单验证
+http://www.360doc.com/content/14/0115/09/15454660_345396016.shtml   Raphael中文文档 
+http://www.th7.cn/web/js/201401/16924.shtml 快速上手RaphaelJS  
+http://www.th7.cn/web/js/201401/16917.shtml   快速上手RaphaelJS  
+ http://blog.csdn.net/yy374864125/article/details/39476991  快速上手RaphaelJS 
+file:///C:/Users/Administrator/Desktop/%E6%94%B6%E8%97%8F20160415-095338.html   HTML5触摸事件(touchstart、touchmove和touchend) 
+http://blog.csdn.net/shuixin536/article/details/8575863  TortoiseGit安装教程
+http://www.cnblogs.com/zhangjing230/archive/2012/05/09/2489745.html    TortoiseGit教程
+http://www.cnblogs.com/armyfai/p/3985660.html  SVN使用教程
+http://wenku.baidu.com/link?url=-3mTK3-L3EbssX3RqyHgCaZ3sd2SUjUdTHWLoidqIIBYZkD92ZiYyjdjU_Ns8Ef_Qg8RFzvO0qZTQ0uCbbxhiI6YPJXT4C1cwBcL7uQX0MC  SVN使用教程
+http://nqdeng.github.io/7-days-nodejs/#1.1  七天学会NodeJS
+1.省略号多行换行。。。。
+overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 6;
+-webkit-box-orient: vertical;
+2.单行省略号
+text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
+3.手机端拨打电话电话：
+<a class="btn" href="tel:4006015230">电话咨询</a>
+4.js一点击定位到下面页面的某处：（当点击.fixed-you的时候定位到.zhuanfa-award）
+ $(".fixed-you").click(function(){
+        $("html,body").animate({scrollTop:$(".zhuanfa-award").offset().top},1400);     
+ });
+
+5.设置锚点
+<a href="#001">跳到001</a>          锚点只能给a标签加，必须是href="#..."  #也是固定的。后面是名字与下面要跳转的地方的id名称相对应。
+...文字省略
+<p name="001" id="001" ></p>
+
+
+6.制作字体网站：http://www.iconfont.cn/help/platform.html(ai制作标准)
+https://icomoon.io/（导出字体网站）
+
+
+7.右键禁用。禁止复制（某段文字禁用右键，禁止复制。选中）
+$(function() {
+	$(".question-content-limit").attr("oncontextmenu","return false")
+});
+$(function() {
+	$(".question-content-limit").attr("onselectstart","return false")
+})
+
+适合火狐浏览器不能选中文字代码   添加样式-moz-user-select:none;
+
+
+8.效果网站，http://www.lanrenzhijia.com/
+materialize   官方网站http://materializecss.com/
+bootstrap     官方网站http://www.bootcss.com/
+
+
+9.清除select 安卓的默认样式。给select设置
+-webkit-appearance: none; 
+appearance: none;   
+-webkit-box-sizing: border-box; 
+box-sizing: border-box;
+
+10.tab切换效果。
+.detail-tab ul .title-tab0,.detail-tab ul .title-tab1,.detail-tab ul .title-tab2,.detail-tab ul .title-tab3,.detail-tab ul .title-tab4,.detail-tab ul .title-tab5{
+   background:#ff4400;
+   color:#fff;
+}
+    <!--tab切换-->
+    <div class="detail-tab">
+    	<ul>
+            <li class="title-tab0">课程详情</li>
+            <li>适用对象</li>
+            <li>视频课程</li>
+            <li>师资案例</li>
+            <li>学员评价</li>
+        </ul>
+        <div class="content-tab">
+        	<img src="images/aqiehuan.jpg"/>
+        </div>
+        <div class="content-tab">
+        	<img src="images/bqiehuan.jpg"/>
+        </div>
+        <div class="content-tab">
+        	<img src="images/cqiehuan.jpg"/>
+        </div>
+        <div class="content-tab">
+        	<img src="images/dqiehuan.jpg"/>
+        </div>
+        <div class="content-tab">
+        	<img src="images/eqiehuan.jpg"/>
+        </div>
+    </div>
+    <!--tab切换-->
+$(document).ready(function(){
+	$(".detail-tab .content-tab").eq(0).show();
+    $(".detail-tab ul li").each(function(index, el) {
+        $(this).click(function(event) {
+            $(".detail-tab ul li").attr('class','');
+            var num = $(this).index();
+            $(this).addClass('title-tab'+num);
+            $(".content-tab").hide();
+            $(".content-tab").eq(index).show();
+        });    
+    });
+});
+11.禁止页面的右键菜单
+$(document).ready(function(){  
+    $(document).bind("contextmenu",function(e){  
+        return false;  
+    });  
+});
+
+11手机功能，禁止缩放
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+12.      \r\n表示回车换行
+
+13.  <link rel="icon" href="图片位置" type="image/x-icon"/>      title上ico图标代码  
+     http://www.ico.la/ 在线ico格式转化
+
+14  http://daneden.github.io/animate.css/   html5和css3手机端动画效果
+15.轮播图
+$("#left,#right").click(function(){
+		var attr=$(this).attr("id");
+		if(attr=="left"){
+			$(".zhuanti img").animate({left:"-=379px"},500,function(){
+				$(".zhuanti img").each(function(){
+					if($(this).css("left")=="-379px"){
+						$(this).css("left","1137px");
+					}
+				})
+			});
+		}
+		if(attr=="right"){
+			$(".zhuanti img").each(function(){
+					if($(this).css("left")=="1137px"){
+						$(this).css("left","-379px");
+					}
+				})
+			$(".zhuanti img").animate({left:"+=379px"},500)
+		}
+	})
+16.dw热点。。。。     代码改成设计。。。。菜单栏窗口属性。选择图片。最下边就是。。可以选择热点。
+<map name="Map">  在map这里有个target="_blank"  下面area的href直接输入地址就好了。
+	<area shape="rect" coords="97,102,207,167" href="#">
+</map>
+
+
+
+1.普通网站用手机打开 右边少了一部分，这个是什么原因呢？
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+
+
+2.图片  灰白效果  css
+filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(100%); filter:gray;
+ 
+-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); _filter:none;   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+
+
+3.谷歌浏览器：
+a标签  text-indent:-999px;     display:block;
+
+
+4.如何解决  img下几像素空白             style=" vertical-align:bottom;"
+
+
+5.谷歌浏览器  字体设置小于12以下     span{-webkit-transform:scale(0.8); display:inline-block}
+
+
+
+6.<input class="mess_but" type="file" value="Select File" >
+<script language="javascript">
+   $(document).ready(function(e) {
+	$(".mess_but").change(function(){
+	str =  $(".mess_but").val();
+	var arr=str.split('\\');//注split可以用字符或字符串分割 
+	var my=arr[arr.length-1];//这就是要取得的图片名称 
+	alert(my);
+   });
+ });
+</script>
+
+
+7.css3多行省略号：
+overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+
+text-overflow:ellipsis; white-space:nowrap;  overflow:hidden;
+
+8.css3 中文换行不打断
+display:inline-block；
+word-wrap:break-word ；
+
+
+9.定时器setTimeout和setInterval
+
+
+
+10.bootstrap
+媒体响应式
+embed-responsive embed-responsive-16by9
+
+
+11.检测手机 跳转
+<script type="text/javascript">
+    var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+    var browser = navigator.userAgent.toLowerCase();
+    var isMobile = false;
+    for (var i=0; i<mobileAgent.length; i++){ if (browser.indexOf(mobileAgent[i])!=-1){ isMobile = true;
+    //alert(mobileAgent[i]);
+    location.href = 'http://www.tpoxiaozhan.com/m/m_ietls/page1.html';
+    break; } }
+    //alert(browser);
+    </script>
+
+
+
+13.如何屏幕100%
+html{
+    height:100%;
+}
+
+
+14.* 动态生成的元素需要在下面直接写效果
+
+
+图片
+http://zhitu.isux.us/
+https://tinypng.com/
+
+angular  zepto
+
+
+https://github.com/jamesflorentino/nanoScrollerJS
+
+
+
+if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){
+	    if(window.location.href.indexOf("?via=")<0){
+	        try{
+	            if(/iPad/i.test(navigator.userAgent)){
+	            	
+	            }else{
+	                window.location.href="wap/default.htm"; 
+	            }
+	        }catch(e){}
+	    }
+	}
+
+
+<script>
+			function gotoLoad(){
+				var u = navigator.userAgent;
+				var type=0;
+				if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+					alert("安卓手机");
+					type=1;
+					window.location.href ="download/android.apk";
+				} else if (u.indexOf('iPhone') > -1) {//苹果手机
+				// window.location.href = "mobile/index.html";
+					type=2;
+					alert("苹果手机");
+					window.location.href ="https://itunes.apple.com/cn/app/tuo-futpo-kuai-pi-kou-yu-tuo/id972025355@mt=8";
+				} else if (u.indexOf('Windows Phone') > -1) {//winphone手机
+					type=3;
+					alert("winphone手机");
+				// window.location.href = "mobile/index.html";
+				}
+			}
+		</script>
+
+一屏
+fullPage.js
+  loopTop: true,
+
+
+em：
+http://www.w3cplus.com/css3/define-font-size-with-css3-rem
+任意浏览器的默认字体高都是16px。所有未经调整的浏览器都符合: 1em=16px。那么12px=0.75em,10px=0.625em。为了简化font-size的换算，需要在css中的body选择器中声明Font-size=62.5%，这就使em值变为 16px*62.5%=10px, 这样12px=1.2em, 10px=1em, 也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了。
+
+rem
+我们设置html的字体大小的值为 html｛font-size: 87.5%;｝（也就是14px，这是twentytwelve默认主题里的设置）
+
+
+方亮发出的这个资料，是为了解决苹果浏览器点击退回的时候，返回到之前页面，页面不会刷新的问题，加了这个代码，只要是点击后退，回到之前的页面都会重新加载
+但是页面不会刷新不是个bug，只是为了解决一些特定的问题，大家知道有这个方案就可以了
+http://stackoverflow.com/questions/8788802/prevent-safari-loading-from-cache-when-back-button-is-clicked
+
+
+图片转化 icon
+
+http://www.ico.la/
+
+
+判断屏幕滚动
+jquery.mousewheel.min.js
+
+//优酷
+http://cloud.youku.com/tools/?qq-pf-to=pcqq.c2c   
+解决ie兼容性
+flashext: '<param name="wmode"value="transparent">'
