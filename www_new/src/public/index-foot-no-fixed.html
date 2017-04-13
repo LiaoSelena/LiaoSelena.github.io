@@ -1,0 +1,28 @@
+<div class="foot-index">
+    <a href="#">版权申明</a>|
+    <a href="#">隐私保护</a>|
+    <a href="#">意见反馈</a>|
+    <a href="#">联系我们</a>|
+    <a href="#">关于我们</a>|
+    <a href="#">网站地图</a>|
+    <a href="#">最新资讯</a>
+    <br><br>
+    © 2009-2016 ZHAN.com All Rights Reserved. 沪ICP备15003744号-1
+</div>
+<!-- 53 -->
+<div class="hide-wusan">
+    <script type="text/javascript">
+    $(window).load(function(){
+        var oldDocumentWrite = document.write;
+        document.write = function(node){
+            $(".hide-wusan").append(node)
+        }
+        $.getScript( "http://kfsv1.zhan.com/kf.php?arg=admin&style=1", function() {
+            setTimeout(function() {
+                document.write = oldDocumentWrite
+            }, 500)
+        });
+    });
+    </script>
+    <img src="images/close.png">
+</div>

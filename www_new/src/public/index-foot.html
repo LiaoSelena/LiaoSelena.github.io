@@ -1,0 +1,79 @@
+<div class="foot-index">
+    <a href="#">版权申明</a>|
+    <a href="#">隐私保护</a>|
+    <a href="#">意见反馈</a>|
+    <a href="#">联系我们</a>|
+    <a href="#">关于我们</a>|
+    <a href="#">网站地图</a>|
+    <a href="#">最新资讯</a>
+    <br><br>
+    © 2009-2016 ZHAN.com All Rights Reserved. 沪ICP备15003744号-1
+</div>
+<div class="fixed-index">
+    <ul>
+        <li class="fixed-kf wusan-Customer">
+            <span class="icon-earphone"></span>
+            <p class="fixed-wenzi">在线咨询</p>
+            <span class="icon-jiantou"></span>
+        </li>
+        <li class="fixed-weixin">
+            <span class="icon-weixin"></span>
+            <p class="fixed-wenzi">官方微信</p>
+            <span class="icon-jiantou"></span>
+            <div class="index-head-weixin-cont">
+                <div class="index-head-toefl-weChat clearfix">
+                    <img src="images/toefl-weChat.jpg">
+                    <div>
+                        <p class="font-color-Orange">托福小站：toefl_121</p>
+                        <p>微信和小站嗨翻天~</p>
+                    </div>
+                </div>
+                <div class="index-head-college-weChat clearfix">
+                    <img src="images/college-weChat.jpg">
+                    <div>
+                        <p class="font-color-Orange">留学小站：TPO188</p>
+                        <p>扫一扫获取最新资料</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="fixed-shouji">
+            <a href="javascript:void(0)" >
+                <span class="icon-shouji"></span>
+                <p class="fixed-wenzi">手机小站</p>
+                <span class="icon-jiantou"></span>
+            </a>
+            <div class="index-head-shouji-cont">
+                <div class="index-head-toefl-shouji clearfix">
+                    <img src="images/official-erweima.png">
+                    <div>
+                        <p class="font-color-Orange">官网手机端</p>
+                    </div>
+                </div>
+                <div class="index-head-college-shouji clearfix">
+                    <img src="images/official-bbs.png">
+                    <div>
+                        <p class="font-color-Orange">小站社区app</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<!-- 53 -->
+<div class="hide-wusan">
+    <script type="text/javascript">
+    $(window).load(function(){
+        var oldDocumentWrite = document.write;
+        document.write = function(node){
+            $(".hide-wusan").append(node)
+        }
+        $.getScript( "http://kfsv1.zhan.com/kf.php?arg=admin&style=1", function() {
+            setTimeout(function() {
+                document.write = oldDocumentWrite
+            }, 500)
+        });
+    });
+    </script>
+    <img src="images/close.png">
+</div>
