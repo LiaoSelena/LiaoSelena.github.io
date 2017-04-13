@@ -141,3 +141,6 @@ ios中:active 没用效果 需要加上 document.body.addEventListener('touchstart', func
 }
 
 禁止拨打电话<meta name="format-detection" content="telephone=no" />
+
+设置rem
+<script>var fz=document.documentElement.clientWidth/(750/100)+'px';document.documentElement.style.fontSize=fz;</script>
