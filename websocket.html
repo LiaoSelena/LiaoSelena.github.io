@@ -3,61 +3,100 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 		<title></title>
 		<style>
+		    body,*{font-size: .28rem; padding: 0; margin: 0;color: #333;}
+		    .box{ padding: .3rem; }
+		    input:focus,button:focus{outline-offset:0;outline:none;}
 			#txt{ 
-				border:1px solid red;
+				border:1px solid #ccc;
+				padding: .2rem;
 				height:1000px;
+				height: 10rem;
+				border-radius: .1rem;
+				overflow-y: scroll;
+				color: #666;
 			}
+			#txt span{ font-weight: 700;}
+			#txt p{ padding-bottom: .2rem;}
+			h1{text-align: center; font-size: .32rem; padding-bottom: .3rem;}
+			.left-float-top{
+			    display: -webkit-box;
+			    display: -moz-box;
+			    display: -ms-flexbox;
+			    display: -webkit-flex;
+			    display: -o-flex;
+			    display: flex;
+			}
+			.flex-1{ flex: 1; -moz-box-flex: 1; -webkit-flex: 1;}
+			.info dt{ width: 1rem; line-height: .5rem; text-align: center;}
+			.text_box{ height: .5rem; width: 99%; border-radius: .1rem; border:#ccc 1px solid; text-indent: 5px;}
+			.send_btn{ background: #000; color: #fff; border:none; width: 2rem;border-radius:0 .1rem .1rem 0; }
+			.text_box_in{ border-radius: .1rem 0 0 .1rem; }
+			.padding_top_1{ padding-top: .2rem;}
 		</style>
-		<script src="http://cdn.goeasy.io/goeasy.js"></script>
+		<script src="goeasy.js"></script>
 	</head>
 	<body>
-		<h1>广角锐智H1708班德州扑克通讯接口</h1>
-		<p>姓名<input  type="text" id="st"/> </p>
-		<p>内容<input  type="text" id="info" /><button onclick="send()">发送</button></p>
-		<div id="txt">
-			聊天内容区
-			
+		<script>var fz=document.documentElement.clientWidth/7.5+'px';document.documentElement.style.fontSize=fz;</script>
+		<div class="box">
+			<h1>来开撕</h1>
+			<div id="txt"></div>
+			<div class="info">
+				<dl class="left-float-top  padding_top_1">
+					<dt class="">姓名</dt>
+					<dd class="flex-1">
+						<input class="text_box" type="text" id="st"/>
+					</dd>
+				</dl>
+				<dl class="left-float-top  padding_top_1">
+					<dt>内容</dt>
+					<dd class="flex-1 left-float-top">
+						<input class="text_box text_box_in" type="text" id="info" />
+						<button class="send_btn" onclick="send()">发送</button>
+					</dd>
+				</dl>
+			</div>
 		</div>
-		
-		
-<script>
-	var goEasy = new GoEasy({
-		appkey: "BC-e2e1d03c0d354465ade016bf64fe486e"
-	});
-	
-	var txt=document.getElementById("txt");
-	
-	goEasy.subscribe({
-		channel: "my_channel",
-		onMessage: function (message) {
-			txt.innerHTML+= message.content+"<br>";
-		},
-		onSuccess: function () {
-			console.log("Channel订阅成功。");
-		},
-		onFailed: function (error) {
-			alert("Channel订阅失败, 错误编码：" + error.code + " 错误信息：" + error.content)
-		}
-	});
-	
-	function send(){
-		var name=document.getElementById("st").value;
-		var info=document.getElementById("info").value;
-		
-		goEasy.publish({
-			channel: "my_channel",
-			message: name+":"+info,
-			onSuccess:function(){
-				console.log("消息发布成功。");
-			},
-			onFailed: function (error) {
-				console.log("消息发送失败，错误编码："+error.code+" 错误信息："+error.content);
+		<script>
+			var goEasy = new GoEasy({
+				appkey: "BC-ed148074d52a465da2c441839f92a2b8"
+			});
+			var txt=document.getElementById("txt");
+			goEasy.subscribe({
+				channel: "my_channel",
+				onMessage: function (message) {
+					txt.innerHTML+= message.content;
+				},
+				onSuccess: function () {
+					console.log("Channel订阅成功。");
+				},
+				onFailed: function (error) {
+					alert("Channel订阅失败, 错误编码：" + error.code + " 错误信息：" + error.content)
+				}
+			});
+			function send(){
+				var name=document.getElementById("st").value;
+				var info=document.getElementById("info").value;
+				//document.body.style.background=colorFun();
+				goEasy.publish({
+					channel: "my_channel",
+					message:"<p><span style=color:"+colorFun()+">"+ name+"</span> : "+info+"</p>",
+					onSuccess:function(){
+						console.log("消息发布成功。");
+					},
+					onFailed: function (error) {
+						console.log("消息发送失败，错误编码："+error.code+" 错误信息："+error.content);
+					}
+				});
 			}
-		});
-	}
-	
-</script>
+			function colorFun(){
+				var r=Math.floor(Math.random()*256);
+				var g=Math.floor(Math.random()*256);
+				var b=Math.floor(Math.random()*256);
+				return "rgb("+r+','+g+','+b+")";//所有方法的拼接都可以用ES6新特性`其他字符串{$变量名}`替换
+			}
+		</script>
 	</body>
 </html>
