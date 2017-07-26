@@ -49,7 +49,7 @@
 				<dl class="left-float-top  padding_top_1">
 					<dt class="">姓名</dt>
 					<dd class="flex-1">
-						<input class="text_box" type="text" id="st"/>
+						<input onkeyup="fun()" class="text_box" type="text" id="st"/>
 					</dd>
 				</dl>
 				<dl class="left-float-top  padding_top_1">
@@ -120,6 +120,9 @@
 			        return false;  
 			    }  
 			    return true;  
+			}
+			function fun(){
+			    $("body").css({"position":"fixed"});
 			}
 		</script>
 	</body>
