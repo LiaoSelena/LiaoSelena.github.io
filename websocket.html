@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#txt{ 
+				border:1px solid red;
+				height:1000px;
+			}
+		</style>
+		<script src="http://cdn.goeasy.io/goeasy.js"></script>
+	</head>
+	<body>
+		<h1>广角锐智H1708班德州扑克通讯接口</h1>
+		<p>姓名<input  type="text" id="st"/> </p>
+		<p>内容<input  type="text" id="info" /><button onclick="send()">发送</button></p>
+		<div id="txt">
+			聊天内容区
+			
+		</div>
+		
+		
+<script>
+	var goEasy = new GoEasy({
+		appkey: "BC-e2e1d03c0d354465ade016bf64fe486e"
+	});
+	
+	var txt=document.getElementById("txt");
+	
+	goEasy.subscribe({
+		channel: "my_channel",
+		onMessage: function (message) {
+			txt.innerHTML+= message.content+"<br>";
+		},
+		onSuccess: function () {
+			console.log("Channel订阅成功。");
+		},
+		onFailed: function (error) {
+			alert("Channel订阅失败, 错误编码：" + error.code + " 错误信息：" + error.content)
+		}
+	});
+	
+	function send(){
+		var name=document.getElementById("st").value;
+		var info=document.getElementById("info").value;
+		
+		goEasy.publish({
+			channel: "my_channel",
+			message: name+":"+info,
+			onSuccess:function(){
+				console.log("消息发布成功。");
+			},
+			onFailed: function (error) {
+				console.log("消息发送失败，错误编码："+error.code+" 错误信息："+error.content);
+			}
+		});
+	}
+	
+</script>
+	</body>
+</html>
