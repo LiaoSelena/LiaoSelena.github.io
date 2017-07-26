@@ -9,15 +9,15 @@
 		    body,*{font-size: .28rem; padding: 0; margin: 0;color: #333;}
 		    .box{ padding: .3rem; }
 		    input:focus,button:focus{outline-offset:0;outline:none;}
-			#txt{ 
+			#txt_box{ 
 				border:1px solid #ccc;
 				padding: .2rem;
-				height:1000px;
-				height: 10rem;
+				height: 8rem;
 				border-radius: .1rem;
 				overflow-y: scroll;
 				color: #666;
 			}
+			#txt{ margin-bottom: 1rem;}
 			#txt span{ font-weight: 700;}
 			#txt p{ padding-bottom: .2rem;}
 			h1{text-align: center; font-size: .32rem; padding-bottom: .3rem;}
@@ -37,12 +37,13 @@
 			.padding_top_1{ padding-top: .2rem;}
 		</style>
 		<script src="http://cdn.goeasy.io/goeasy.js"></script>
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	</head>
 	<body>
 		<script>var fz=document.documentElement.clientWidth/7.5+'px';document.documentElement.style.fontSize=fz;</script>
 		<div class="box">
 			<h1>来开撕</h1>
-			<div id="txt"></div>
+			<div id="txt_box"><div id="txt"></div></div>
 			<div class="info">
 				<dl class="left-float-top  padding_top_1">
 					<dt class="">姓名</dt>
@@ -94,6 +95,14 @@
 						console.log("消息发送失败，错误编码："+error.code+" 错误信息："+error.content);
 					}
 				});
+				var BoxH = $("#txt_box").outerHeight(true);
+				var txtH = $("#txt").outerHeight(true);
+				console.log(BoxH+"------"+txtH);
+				if(txtH>BoxH){
+					var xc=parseInt(txtH+1000);
+					$("#txt_box").scrollTop(xc);
+					console.log("xc:"+xc);
+				}
 			}
 			function colorFun(){
 				var r=Math.floor(Math.random()*256);
