@@ -7,21 +7,25 @@
 		<title></title>
 		<style>
 		    body,*{font-size: .28rem; padding: 0; margin: 0;color: #333;}
-		    .box{ padding: .3rem; }
-		    body{ position: fixed;}
+		    /*.box{ padding: .3rem; }*/
 		    input:focus,button:focus{outline-offset:0;outline:none;}
 			#txt_box{ 
+				position: absolute;
+				width: 100%;
+			    top: 1rem;
+			    bottom: .74rem;
+			    overflow-y: scroll;
+			    -webkit-overflow-scrolling: touch
 				border:1px solid #ccc;
 				padding: .2rem;
 				height: 8rem;
 				border-radius: .1rem;
-				overflow-y: scroll;
 				color: #666;
 			}
 			#txt{ margin-bottom: 1rem;}
 			#txt span{ font-weight: 700;}
 			#txt p{ padding-bottom: .2rem;}
-			h1{text-align: center; font-size: .32rem; padding-bottom: .3rem;}
+			h1{text-align: center; font-size: .32rem; padding: .3rem;}
 			.left-float-top{
 			    display: -webkit-box;
 			    display: -moz-box;
@@ -31,6 +35,7 @@
 			    display: flex;
 			}
 			.flex-1{ flex: 1; -moz-box-flex: 1; -webkit-flex: 1;}
+			.info{ position: absolute; right: .3rem; left: .3rem; bottom: .3rem;}
 			.info dt{ width: 1rem; line-height: .5rem; text-align: center;}
 			.text_box{ height: .5rem; width: 99%; border-radius: .1rem; border:#ccc 1px solid; text-indent: 5px;}
 			.send_btn{ background: #000; color: #fff; border:none; width: 2rem;border-radius:0 .1rem .1rem 0; }
@@ -49,7 +54,7 @@
 				<dl class="left-float-top  padding_top_1">
 					<dt class="">姓名</dt>
 					<dd class="flex-1">
-						<input onkeyup="fun()" class="text_box" type="text" id="st"/>
+						<input  class="text_box" type="text" id="st"/>
 					</dd>
 				</dl>
 				<dl class="left-float-top  padding_top_1">
@@ -120,9 +125,6 @@
 			        return false;  
 			    }  
 			    return true;  
-			}
-			function fun(){
-			    $("body").css({"position":"fixed"});
 			}
 		</script>
 	</body>
