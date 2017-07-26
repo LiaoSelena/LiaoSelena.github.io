@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 		<title></title>
 		<style>
 		    body,*{font-size: .28rem; padding: 0; margin: 0;color: #333;}
@@ -68,6 +68,7 @@
 				channel: "my_channel",
 				onMessage: function (message) {
 					txt.innerHTML+= message.content;
+					document.getElementById("info").value="";
 				},
 				onSuccess: function () {
 					console.log("Channel订阅成功。");
@@ -79,6 +80,9 @@
 			function send(){
 				var name=document.getElementById("st").value;
 				var info=document.getElementById("info").value;
+				if(name==''){
+					name="匿名";
+				}
 				//document.body.style.background=colorFun();
 				goEasy.publish({
 					channel: "my_channel",
@@ -96,6 +100,16 @@
 				var g=Math.floor(Math.random()*256);
 				var b=Math.floor(Math.random()*256);
 				return "rgb("+r+','+g+','+b+")";//所有方法的拼接都可以用ES6新特性`其他字符串{$变量名}`替换
+			}
+			document.onkeydown=keyDownSearch; //电脑键盘enter搜索
+			 function keyDownSearch(e) {  
+			    var theEvent = e || window.event;  
+			    var code = theEvent.keyCode || theEvent.which || theEvent.charCode;  
+			    if (code == 13) {   
+			        send();
+			        return false;  
+			    }  
+			    return true;  
 			}
 		</script>
 	</body>
