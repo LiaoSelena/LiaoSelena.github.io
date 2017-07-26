@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>flex布局</title>
+		<style>
+			/*默认从左浮动*/
+			*{margin: 0;padding: 0;}
+			.item{display: block;width: 200px;height: 200px;background: yellow;}
+			.item:nth-child(odd){background: yellowgreen;}
+			div{height: 600px;background: burlywood;}
+			h1{text-align: center;font-size: 46px;padding: 36px 0;}
+			h4{color: #909090;padding: 10px 0;text-align: center;}
+			
+			/*display: -webkit-box;*/ /* OLD - iOS 6-, Safari 3.1-6 */
+		    /*display: -moz-box;*/ /* OLD - Firefox 19- (buggy but mostly works) */
+		    /*display: -ms-flexbox;*/ /* TWEENER - IE 10 */
+		    /*display: -webkit-flex;*/ /* NEW - Chrome */
+		   /* display: flex;*/ /* NEW, Spec - Opera 12.1, Firefox 20+ */
+		  
+			/*1-1向左浮动+向上对齐+不换行*/
+			/*left-float-top*/
+			.left-float-top {
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			}
+			/*1-2居中浮动+向上对齐+不换行*/
+			/*center-float-top*/
+			.center-float-top {
+			    display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+			  	-webkit-justify-content: center;
+			  	-moz-justify-content: center;
+			  	-ms-justify-content: center;
+			  	-o-justify-content: center;
+			    justify-content: center;
+			}
+			/*1-3向右浮动+向上对齐+不换行*/
+			/*right-float-top*/
+			.right-float-top{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+			  	-webkit-justify-content: flex-end;
+			  	-moz-justify-content: flex-end;
+			  	-ms-justify-content: flex-end;
+			  	-o-justify-content: flex-end;
+  				justify-content: flex-end;
+			}
+			/*2-1居中浮动+左对齐+不换行*/
+			/*center-float-left*/
+			.center-float-left{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+			  	-webkit-align-items: center;
+			  	-moz-align-items: center;
+			  	-ms-align-items: center;
+			  	-o-align-items: center;
+				align-items: center;
+			}
+			/*2-2居中浮动+居中对齐+不换行*/
+			/*center-float-center*/
+			.center-float-center{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+			  	-webkit-justify-content: center;
+				-moz-justify-content: center;
+				-ms-justify-content: center;
+				-o-justify-content: center;
+				justify-content: center;
+				
+				-webkit-align-items: center;
+			  	-moz-align-items: center;
+			  	-ms-align-items: center;
+			  	-o-align-items: center;
+				align-items: center;
+				
+			}
+			/*2-3居中浮动+右对齐+不换行*/
+			/*center-float-right*/
+			.center-float-right{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+				-webkit-justify-content: flex-end;
+				-moz-justify-content: flex-end;
+				-ms-justify-content: flex-end;
+				-o-justify-content: flex-end;
+				justify-content: flex-end;
+				
+				-webkit-align-items: center;
+			  	-moz-align-items: center;
+			  	-ms-align-items: center;
+			  	-o-align-items: center;
+				align-items: center;
+			}
+			/*3-1向下浮动+向左对齐+不换行*/
+			/*bottom-float-left*/
+			.bottom-float-left{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+				-webkit-align-items: flex-end;
+				-moz-align-items: flex-end;
+				-ms-align-items: flex-end;
+				-o-align-items: flex-end;
+				align-items: flex-end;
+			}
+			/*3-2向下浮动+居中对齐+不换行*/
+			/*bottom-float-center*/
+			.bottom-float-center{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+				-webkit-justify-content: center;
+				-moz-justify-content: center;
+				-ms-justify-content: center;
+				-o-justify-content: center;
+				justify-content: center;
+				
+				-webkit-align-items: flex-end;
+				-moz-align-items: flex-end;
+				-ms-align-items: flex-end;
+				-o-align-items: flex-end;
+				align-items: flex-end;
+			}
+			/*3-3向下浮动+向右对齐+不换行*/
+			/*bottom-float-right*/
+			.bottom-float-right{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+			  	-webkit-justify-content: flex-end;
+				-moz-justify-content: flex-end;
+				-ms-justify-content: flex-end;
+				-o-justify-content: flex-end;
+				justify-content: flex-end;
+				
+				-webkit-align-items: flex-end;
+				-moz-align-items: flex-end;
+				-ms-align-items: flex-end;
+				-o-align-items: flex-end;
+				align-items: flex-end;
+			}
+			/*4-1向上左右分布*/
+			/*top-lr-scatter*/
+			.top-lr-scatter{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+				-webkit-justify-content: space-between;
+				-moz-justify-content: space-between;
+				-ms-justify-content: space-between;
+				-o-justify-content: space-between;
+				justify-content: space-between;
+			}
+			/*4-2上下居中左右分布*/
+			/*tbc-lr-scatter*/
+			.tbc-lr-scatter {
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+		
+			    -webkit-justify-content: space-around;
+			    -moz-justify-content: space-around;
+			    -ms-justify-content: space-around;
+			    -o-justify-content: space-around;
+			    justify-content: space-around;
+			    
+			    -webkit-align-items: center;
+			  	-moz-align-items: center;
+			  	-ms-align-items: center;
+			  	-o-align-items: center;
+				align-items: center;
+			  }
+			  /*4-3向下左右分布*/
+			 /*bottom-lr-scatter*/
+			.bottom-lr-scatter{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+			  	-webkit-align-items: flex-end;
+				-moz-align-items: flex-end;
+				-ms-align-items: flex-end;
+				-o-align-items: flex-end;
+				align-items: flex-end;
+			  	
+			  	-webkit-justify-content: space-between;
+				-moz-justify-content: space-between;
+				-ms-justify-content: space-between;
+				-o-justify-content: space-between;
+				justify-content: space-between;
+			}
+			/*5-1向左上下分布*/
+			/*left-tb-scatter*/
+			.left-tb-scatter{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+				-webkit-flex-direction: column;
+				-moz-flex-direction: column;
+				-ms-flex-direction: column;
+				-o-flex-direction: column;
+				flex-direction: column;
+				
+				-webkit-justify-content: space-between;
+				-moz-justify-content: space-between;
+				-ms-justify-content: space-between;
+				-o-justify-content: space-between;
+				justify-content: space-between;
+			}
+			/*5-2居中上下分布*/
+			/*center-tb-scatter*/
+			.center-tb-scatter{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+			  	-webkit-flex-direction: column;
+				-moz-flex-direction: column;
+				-ms-flex-direction: column;
+				-o-flex-direction: column;
+				flex-direction: column;
+				
+				-webkit-justify-content: space-between;
+				-moz-justify-content: space-between;
+				-ms-justify-content: space-between;
+				-o-justify-content: space-between;
+				justify-content: space-between;
+				
+				-webkit-align-items: center;
+			  	-moz-align-items: center;
+			  	-ms-align-items: center;
+			  	-o-align-items: center;
+				align-items: center;
+			}
+			/*5-3向右上下分布*/
+			/*right-tb-scatter*/
+			.right-tb-scatter{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: -o-flex;
+			  	display: flex;
+			  	
+				-webkit-flex-direction: column;
+				-moz-flex-direction: column;
+				-ms-flex-direction: column;
+				-o-flex-direction: column;
+				flex-direction: column;
+				
+				-webkit-justify-content: space-between;
+				-moz-justify-content: space-between;
+				-ms-justify-content: space-between;
+				-o-justify-content: space-between;
+				justify-content: space-between;
+				
+				-webkit-align-items: flex-end;
+				-moz-align-items: flex-end;
+				-ms-align-items: flex-end;
+				-o-align-items: flex-end;
+				align-items: flex-end;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<h1>left-float-top</h1>
+		<h4>1-1向左浮动+向上对齐+不换行</h4>
+		<div class="left-float-top">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>center-float-top</h1>
+		<h4>1-2居中浮动+向上对齐+不换行</h4>
+		<div class="center-float-top">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>right-float-top</h1>
+		<h4>1-3向右浮动+向上对齐+不换行</h4>
+		<div class="right-float-top">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>center-float-left</h1>
+		<h4>2-1居中浮动+左对齐+不换行</h4>
+		<div class="center-float-left">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>center-float-center</h1>
+		<h4>2-2居中浮动+居中对齐+不换行</h4>
+		<div class="center-float-center">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>center-float-right</h1>
+		<h4>2-3居中浮动+右对齐+不换行</h4>
+		<div class="center-float-right">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>bottom-float-left</h1>
+		<h4>3-1向下浮动+向左对齐+不换行</h4>
+		<div class="bottom-float-left">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>bottom-float-center</h1>
+		<h4>3-2向下浮动+居中对齐+不换行</h4>
+		<div class="bottom-float-center">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>bottom-float-right</h1>
+		<h4>3-3向下浮动+向右对齐+不换行</h4>
+		<div class="bottom-float-right">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>top-lr-scatter</h1>
+		<h4>4-1向上左右分布</h4>
+		<div class="top-lr-scatter">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>tbc-lr-scatter</h1>
+		<h4>4-2上下居中左右分布</h4>
+		<div class="tbc-lr-scatter">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		<!--向下左右分布-->
+		<h1>bottom-lr-scatter</h1>
+		<h4>4-3向下左右分布</h4>
+		<div class="bottom-lr-scatter">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>left-tb-scatter</h1>
+		<h4>5-1向左上下分布</h4>
+		<div class="left-tb-scatter">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>center-tb-scatter</h1>
+		<h4>5-2居中上下分布</h4>
+		<div class="center-tb-scatter">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		
+		<h1>right-tb-scatter</h1>
+		<h4>5-3向右上下分布</h4>
+		<div class="right-tb-scatter">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		<div style="height: 100px;width: 100%;background: burlywood;"></div>
+	</body>
+</html>
