@@ -1,1 +1,272 @@
-text
+1.
+去除iPhone中input的默认样式
+cursor:pointer;-webkit-appearance: none;
+
+2.
+点击元素产生背景或边框问题
+
+a,button,input,textarea { 
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-user-modify:read-write-plaintext-only; //-webkit-user-modify有个副作用，就是输入法不再能够输入多个字符
+}   
+
+/*也可以...，简单粗暴*/
+*
+ { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+
+3.
+d3.js做的两个交互效果的例子，刚才没找到，
+http://bl.ocks.org/mbostock/1062544
+http://bl.ocks.org/mbostock/9539958
+
+
+4.
+设置背景图片全屏
+.question-html{
+    height: 100%;
+    background: url(../images/question-bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+在页面的html标签里面加上类名.question-html
+
+5.
+设置多行字隐藏的.css，只能在谷歌下有效果
+overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;（设置行数）
+-webkit-box-orient: vertical;
+
+6.
+一行字体隐藏.css 多余的用省略号
+overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+
+7.
+手机页面头部需加的标签
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta charset="utf-8">
+
+8.
+流动布局 flexbox（旧版本）
+ul{display:block;/* Firefox */ display: -moz-box; -moz-box-orient: horizontal; /* Safari, Opera, and Chrome */ display: -webkit-box; -webkit-box-orient: horizontal; /* W3C */ display: box; box-orient: horizontal; padding:15px 20px; border-bottom:1px #ddd solid; }
+li{-moz-box-flex:1.0; -webkit-box-flex:1.0; box-flex:1.0; display:block; font-size:16px; height:25px; line-height:25px; color:#636363; overflow:hidden;}
+.center{box-pack:center;/*子元素水平居中*/ box-align:center;/*子元素垂直居中*/}
+
+流动布局 flexbox（新版本 IOS 安卓4.4及以上的版本支持）
+ul{ display:-webkit-flex;  flex-direction:row;/*默认值 横排*/}
+li{flex:1;}
+ul{ display:-webkit-flex; flex-direction:column;/*竖排*/ }
+ul{ display:-webkit-flex; -webkit-flex-wrap:wrap;/*超出容器换行 默认值是nowrap(不换行)*/ }
+li{ align-self:center;/*相对于父容器垂直的位置 居中center  底部flex-end 高度占满整个父容器auto stretch*/}
+ul{ align-items:center;/*用在父容器上 设置全部子元素的垂直位置居中 */ justify-content:center; 水平居中}
+ul{justify-content:space-between;/*父容器设置设置，让子元素位于左右两边*/}
+
+9.
+DIV不定宽高的水平居中
+.center{ position:absolute; top:50%; left:50%; -webkit-transform:translate(-50%,-50%);height:50px; background:#ff0;}
+
+10.
+DIV定高的水平居中
+body,html{ height:100%;}
+是在设置父元素上 使子元素居中
+.parent{ justify-content:center;/*子元素水平居中*/ align-items:center;/*子元素垂直居中*/ display:-webkit-flex;height:100%;}
+
+11.
+正则表达式 匹配文字 [\u4e00-\u9fa5]
+
+12.
+pc端页面遮罩层的样式设置
+.backdrop{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    
+}
+
+13.
+模糊效果样式
+filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+    -moz-opacity:0.2;
+    -khtml-opacity: 0.2;
+
+14.
+$("body").on('click',".question-wrap-title",function(){})
+	
+当这种形式绑定click事件时在iPhone里面会出现不可点击的情况即点不中
+	
+这时只需要在body上面加上属性
+	cursor: pointer;
+
+15.
+在移动端，点击页面空白处 会出现高光的解决方案
+body{ -webkit-tap-highlight-color:rgba(0,0,0,0);  }
+
+16.
+当offset().top值不准确的时候
+用到offset().top时候 jq要用到$(window).load(function(){}();
+.offset().top 获取这个属性的元素 当页面没有这个元素 就会报错
+
+17.
+.文字两边没有对齐问题？ 解决：text-align:justify;
+
+18.
+文字和英文没有自动换行问题？ 解决：word-wrap:break-word（单词会在下一行显示====CSS3)
+word-break:break-all(单词会截断显示);
+
+19.
+在IE中日期转化为毫秒数：newTime= Math.round(new Date(time).getTime())返回NaN？ 解决：将日期的“-”转化为“/”再进行毫秒转化,例如:2016-10-01转为2016/10/01
+
+19.
+margin:0 auto 在IE8下不起效果？
+在body上面加width:100%;text-align:center;
+
+20.
+移动端高清图片的处理，为了避免模糊，图片的宽高应该用物理像素渲染，即100*100的图片，应该使用100dp*100dp；
+width:(w_value/dpr)px;
+
+21.
+rem的基值(相对body的单位):rem=screen.width/20;
+em:相对于父元素的单位
+<script>var fz=document.documentElement.clientWidth/7.5+'px';document.documentElement.style.fontSize=fz;</script>
+
+22.
+ios中:active 没用效果 需要加上 document.body.addEventListener('touchstart', function () {});
+
+23.
+修改placeholder 提示的样式
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #909;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #909;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #909;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #909;
+}
+
+24.
+禁止拨打电话<meta name="format-detection" content="telephone=no" />
+
+25.
+合并边框padding值
+box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+-webkit-box-sizing:border-box; /* Safari */
+
+26
+移动端禁用长按选中文本功能（会导致input无法输入的情况）
+* {
+-webkit-touch-callout:none;
+-webkit-user-select:none;
+-khtml-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+user-select:none;
+}
+
+27
+//ajax调用
+$.ajax({
+		type:'get',
+		timeout:8000,  //设置8秒超时
+		dataType : "json",
+		url:"/newmedia/wechatTemplateCompany/getWechatTemplate.action,
+    data:{},
+		success:function(data){
+			 
+		},
+		error:function(){
+				$('#nothing').text('吖，网页出现错误啦！');
+				$('#nothing').css({'display':'flex'});
+				$('#public_center,#loading').hide();
+			},
+		complete:function(XMLHttpRequest,status){
+			if(status=='timeout'){
+				mui.confirm('网络超时了，刷新试试？','提示',['否', '刷新'],function(e){
+					if(e.index==1)location.reload();
+				})
+			}
+		}
+	})
+
+28.
+//返回上一页并刷新
+onclick="self.location=document.referrer;"
+
+29.
+有效手机号码验证
+var telNum=/^(((13[0-9]{1})|(17[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+!telNum.test(cellphone)
+
+30
+//获取连接地址后面的参数
+function getUrlParam(){var args={};var search=decodeURIComponent(location.search.substring(1));var arr=search.split('&');for(var i=0,len=arr.length;i<len;i++){var t=arr[i].split('=');args[t[0]]=t[1]}return args}
+
+31
+//获取当前不带参数的url
+function getUrlNoParam(){var url=window.location.href;var arr=url.split("?");if(arr.length>0){return url.split("?")[0]}return url}
+
+32//判断是否为微信浏览器 @return Boolean
+function isWeiXin(){var ua=window.navigator.userAgent.toLowerCase();if(ua.match(/MicroMessenger/i)=='micromessenger'){return true}else{return false}}
+
+33//同步获取系统配置链接
+function getSysCommonUrl(){
+	var sysCommon;
+	$.ajax({
+		type:'get',
+		url:'/newmedia/sysCommon/getCommonUrls.action',
+		async:false,
+		success:function(data){
+			if(data) sysCommon=data;
+		}
+	})
+	return sysCommon;
+}
+
+34 jq解码 unescape() 加码escap()
+
+35用输入框里的搜索按钮绑定搜索
+	<!doctype html>
+	<html lang="en">
+ 		<head>
+     		<meta charset="UTF-8">
+     		<title>Document</title>
+     		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+     		<script src="jquery-1.11.2.min.js"></script>
+ 	</head>
+ 	<body>
+     		<form id="myform" action="" onsubmit="return false;">
+     			<input id="myinput" type="search">
+     		</form>
+		<script>
+ 			//这两种都能用, 一个是在form上加id 一个是在input元素加id
+ 			//对于苹果手机添加一个form元素是必要的,否则只能实现功能但是键盘的文字不能变成搜索字样
+ 			//  $('#myform').bind('search', function () {
+ 			//      //coding
+ 			//      alert(1);
+ 			//  });
+    		 	$('#myinput').on('search',function(){
+         			//coding
+         			alert(1);
+     			});
+ 		</script>
+		</body>
+	</html>
