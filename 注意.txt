@@ -270,5 +270,8 @@ function getSysCommonUrl(){
  		</script>
 		</body>
 	</html>
+36
+https的页面不能套http请求 需要加
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 Contact GitHub API Training Shop Blog About
 © 2017 GitHub, Inc. Terms Privacy Security Status Help
